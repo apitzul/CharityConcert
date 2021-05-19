@@ -4,24 +4,49 @@
         <title>Booking of Charity Concert</title>
     </head>
     <body>
-        Please fill in the blanks to make a booking.
+        <b>Please fill in the blanks to make a booking.</b>
         <form method = "post" action = "/CharityConcert/bookingOrder">
-            <p>Full Name: <font color = "#FF0000"></font>
-                <input type = "text" name = "fullName">&nbsp;
+            <p><b>Full Name: </b><font color = "#FF0000"></font>
+                <input type = "text" name = "fullName" size="35">&nbsp;
             </p>
-            <p>Gender:
+            <p><b>Gender: </b>
                 <select size="1" name="gender">
                     <option value="Male">Male</option>
                     <option value="Female">Female
                     </option>
                 </select>&nbsp;
-                Age:
+                <b>Age: </b>
                 <input type ="text" name ="age" size="5">&nbsp;
             </p>
-            <p>Phone Number:
-                <input type ="text" name ="pNumber" size="12">&nbsp;
+            <p><b>Phone Number: </b>
+                <input type ="text" name ="pNumber" size="14">&nbsp;
             </p>
-            <p>Merchandise:
+            <p><b>Email: </b>
+                <input type ="text" name ="email" size="23">&nbsp;
+            </p><hr>
+            <p>
+                <img src="https://blackpinkupdate.com/wp-content/uploads/2018/11/Seat-Plan-BLACKPINK-concert-manila-Philippines.jpg"
+                     width="300" height="430"
+                     alt="Blackpink In Your Area">
+            </p>
+            <p><b>No. of Ticket: </b>
+                <input type ="text" name ="ticket" size="3">&nbsp;
+                <b>Area: </b>
+                <select size="1" name="area">
+                    <option value="AreaG">Gold</option>
+                    <option value="AreaO">Orange</option>
+                    <option value="AreaY">Yellow</option>
+                    <option value="AreaG">Green</option>
+                    <option value="AreaR">Red</option>
+                </select>&nbsp;
+            </p>
+            <hr>
+            <p>
+                <img src="https://img.freepik.com/free-psd/set-merchandising-products-with-company-logo_23-2148154557.jpg"
+                    width="400" height="200"
+                    alt="Merchandise">
+            </p>    
+            <p><b>Merchandise: </b>
                 <select size="1" name="merchandise">
                     <option value="ComboN">None</option>
                     <option value="ComboA">Combo A</option>
@@ -34,6 +59,6 @@
                 <input type="reset" value="Reset">
             </p>
         </form>
-        <div><a href="receiptOrder.html">Press Here for The Receipt.</a></div>
+        <div><a href="receiptOrder.html">Press Here for The Checkout.</a></div>
     </body>
 </html>
