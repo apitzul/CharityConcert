@@ -12,6 +12,9 @@ body, h1,h2,h3,h4,h5,h6 {
     
     font-family: "Montserrat", sans-serif
 }
+body,html{
+    min-height: 100%;
+}
 h1{
     margin-bottom: -1px;
 }
@@ -34,7 +37,7 @@ a:hover{
   background-color: #382952  ;  
 }
 body {
-  background-image: url("Image/caliphbuskers kanan.png");
+  
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -50,4 +53,31 @@ body {
   text-align: center;
   margin-top: 25px;
   margin-bottom: 35px;
+}
+
+.containerleft{
+  text-align: left;
+  padding: 100px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.containerright{
+  text-align: right;
+  padding: 100px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.background1{
+    height: 100%;
+    width: 100%;
+    background-image: url("Image/caliphbuskers kanan.png");
+    background-size: cover;
+}
+.background2{
+    height: 100%;
+    width: 100%;
+    background-image: url("Image/concert plan.png");
+    background-size: cover;
 }
