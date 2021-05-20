@@ -30,6 +30,7 @@ a{
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 40px;
 }
 a::before{
   background-color:  #7051a5  ;  
@@ -106,7 +107,11 @@ body {
             
 .divRight{
     text-align: right;
+    margin-top: 10px;
+}
 
+.divLeft{
+    text-align: left;
 }
 
 div{
@@ -119,4 +124,16 @@ input{
 }
 select{
     padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:40%
+}
+
+ .book{
+    background-color: green;
+ }
+            
+.book:hover{
+    background-color: 	#006400;
+}
+            
+.book::before{
+    background-color: green;
 }
