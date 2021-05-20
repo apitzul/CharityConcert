@@ -180,3 +180,37 @@ select{
 .navigation{
         margin-right: 10px;               
 }
+
+.input2{
+    background-color: #006600;
+    color: white;
+    padding: 12px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 40px;
+    border:0px;
+}
+.input2::before{
+  background-color: #006600;  
+}
+.input2:hover{
+  background-color: #004d00;  
+}
+
+.input3{
+    background-color: #990000;
+    color: white;
+    padding: 12px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 40px;
+    border:0px;
+}
+.input3::before{
+  background-color: #990000;  
+}
+.input3:hover{
+  background-color: #660000;  
+}
