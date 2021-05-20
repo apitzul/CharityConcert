@@ -97,3 +97,18 @@ body {
     margin-top: 25px;
     color: darkgray;
 }
+
+.divCenter{
+    text-align: center;
+
+}
+            
+.divRight{
+    text-align: right;
+
+}
+
+div{
+width: 100%;
+                
+}
