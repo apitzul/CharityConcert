@@ -107,7 +107,7 @@ body {
             
 .divRight{
     text-align: right;
-    margin-top: 10px;
+    
 }
 
 .divLeft{
@@ -140,6 +140,7 @@ select{
 
 .span{
         display: flex;
+        margin-top: 10px;
 }
 .icon{
         width: 85px;
