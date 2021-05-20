@@ -73,16 +73,21 @@ body {
 }
 
 .background1{
-    height: 100%;
-    width: 100%;
+    
+    width: 1920px;
+    height: 1080px;
     background-image: url("Image/caliphbuskers kanan.png");
     background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .background2{
-    height: 100%;
+
     width: 100%;
+    height: 1080px;
     background-image: url("Image/concert plan.png");
-    background-size: cover;
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
 }
 .background3{
     background-color: #000000;
