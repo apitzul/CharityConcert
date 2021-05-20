@@ -6,6 +6,38 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <style>
+            ul{
+                list-style-type: none;  
+                margin-right: 40px;
+            }         
+            li{
+                display: inline;
+            }            
+            hr{
+                width: 100%;           
+            }
+            .divPadding{
+                padding: 50px;
+            }
+            .divBackgroundGrey{
+                background-color: #0a0a0a  ;
+                width: 40%;
+                margin-left: 40px;
+                border-radius: 20px;
+                padding: 20px;
+            }
+            h3{
+                margin-top: 0px;
+                
+            }
+            td{
+                background-color:  #000000 ;
+                padding:10px;
+                border-radius: 25px;
+                padding-left: 20px;
+            }
+        </style>
         <title>Receipt Order Generated</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,40 +46,60 @@ and open the template in the editor.
         
     </head>
     <body>
-        
-        <div>
+        <div class="span">           
+            <div>
+                <img src="Image/logo color.png" class="icon">
+                <img src="Image/x colab.png" class="icon2">
+                <img src="Image/caliph buskers logo.png" class="icon">
+            </div>
+            <div class="divRight">
+            <ul>               
+                <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
+                <li class="navigation"><a href="bookingOrder.html">About Us</a></li>
+                <li class="navigation"><a href="receiptOrder.html">Contact Us</a></li>
+                <li class="navigation"><a class="book" href="bookingOrder.html">Book here</a></li>
+            </ul>  
+            </div>
+        </div>
+        <hr>
+        <div class="divPadding">
             <h1>Ticket Booking Details</h1>
         </div>
-        <div>
+        <div class="divBackgroundGrey">
            <h3>Customer Details:<br></h3>
             <table>
             <tbody>
                 <tr>
                     <td><b>Full Name</b><br></td>
-                    <td><b>: </b>B<br></td>
+                    <td>B<br></td>
                 </tr>
                 <tr>
                     <td><b>Gender</b><br></td>
-                    <td><b>: </b>B<br></td>
+                    <td>B<br></td>
                 </tr>
                 <tr>    
                     <td><b>Age</b><br></td>
-                    <td><b>: </b>B<br></td>
+                    <td>B<br></td>
                 </tr>
                 <tr>
                     <td><b>Phone Number</b><br></td>
-                    <td><b>: </b>B<br></td>
+                    <td>B<br></td>
                 </tr>
             </tbody> 
             </table> 
         </div>
-        <div>
+        <br>
+        <div class="divBackgroundGrey">
             <h3>Your Ticket</h3>
 
 
-            <a href="ticketview.html" target="_blank">Area A</a><br>
+            
             <table>
                 <tbody>
+                    <tr>    
+                        <td><b>Number Of Ticket</b><br></td>
+                        <td><b>: </b>RM140<br></td>
+                    </tr>
                     <tr>
                         <td><b>Merchandise Details</b><br></td>
                         <td><b>: </b>Combo A<br></td>
@@ -60,14 +112,15 @@ and open the template in the editor.
                         <td><b>Total Price</b><br></td>
                         <td><b>: </b>RM140<br></td>
                     </tr>
+                    
 
                 </tbody> 
             </table>
-
+            <a href="ticketview.html" target="_blank">Download Your Ticket</a><br>
             <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
 
         </div>
-        <div>
+        <div class="divPadding">
             <h1>Thank You !!<br></h1>
             <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
             <p class="note">*You may save or print the full receipt</p>
