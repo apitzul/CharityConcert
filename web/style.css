@@ -81,3 +81,11 @@ body {
     background-image: url("Image/concert plan.png");
     background-size: cover;
 }
+.background3{
+    background-color: #000000;
+    height: 100px;
+    width: 100%;
+}
+.noteGrey{
+    color: gray;
+}
