@@ -8,31 +8,23 @@
         <div class="background1">
             <div class="containerleft">
             
-                    <h1><b>Booking Form.</b></h1>
+                    <h1><b>Book Your Ticket Here.</b></h1>
             <form method = "post" action = "/CharityConcert/bookingOrder">
-            <p>
-                Please fill the form.
-            </p>
-            <p><b>Full Name: </b><font color = "#FF0000"></font>
-                <input type = "text" name = "fullName" size="35">&nbsp;
-            </p>
-            <p><b>Gender: </b>
+            <p>  </p>
+            
+                <input type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
                 <select size="1" name="gender">
+                    <option value="NoGender">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female
                     </option>
                 </select>&nbsp;
-                <b>Age: </b>
-                <input type ="text" name ="age" size="5">&nbsp;
-            </p>
-            <p><b>Phone Number: </b>
-                <input type ="text" name ="pNumber" size="14">&nbsp;
-            </p>
-            <p><b>Email: </b>
-                <input type ="text" name ="email" size="25">&nbsp;
-            </p>  
+                <input type ="text" name ="age" size="31" placeholder="Age">&nbsp;
+                <input type ="text" name ="pNumber" size="49" placeholder="Phone Number">&nbsp;  
+                <input type ="text" name ="email" size="49" placeholder="Email">&nbsp; 
+                
             <p class="noteGrey">
-                Scroll Down.
+                Scroll Down
             </p>
             <img class="arrow"
                  src="Image/arrow down.png"
@@ -46,23 +38,28 @@
                     <tbody>
                     <tr>
                         <td><b>Area</b><br></td>
-                        <td><b>Availability</b><br></td>
-                        <td><b>No. of Seat</b><br></td>
+                        <td><b>| Availability</b><br></td>
+                        <td><b>| No. of Seat</b><br></td>
+                    </tr>
+                    <tr>
+                        <td><b>________________</b><br></td>
+                        <td><b>|________________</b><br></td>
+                        <td><b>|________________</b><br></td>
                     </tr>
                     <tr>
                         <td><b>Yellow</b><br></td>
-                        <td><b>Available</b><br></td>
-                        <td>3<br></td>
+                        <td><b>| Available</b><br></td>
+                        <td>| 3<br></td>
                     </tr>
                     <tr>    
                         <td><b>Orange</b><br></td>
-                        <td><b>Full Booking</b><br></td>
-                        <td>Not Available<br></td>
+                        <td><b>| Full Booking</b><br></td>
+                        <td>| Not Available<br></td>
                     </tr>
                     <tr>
                         <td><b>Green</b><br></td>
-                        <td><b>Available</b><br></td>
-                        <td>3<br></td>
+                        <td><b>| Available</b><br></td>
+                        <td>| 3<br></td>
                     </tr>
                     </tbody> 
                 </table>
@@ -72,17 +69,16 @@
                     width="400" height="200"
                     alt="Merchandise">
                 </p>    
-                <p><b>Merchandise: </b>
                 <select size="1" name="merchandise">
+                    <option value="NoMerchandise">Select Merchandise Combo</option>
                     <option value="ComboN">None</option>
                     <option value="ComboA">Combo A</option>
                     <option value="ComboB">Combo B</option>
                     <option value="ComboC">Combo C</option>
                 </select>&nbsp;
-                </p>
-                <p><b>Extra Donation: </b>RM
-                    <input type ="text" name ="extdonation" size="8">&nbsp;
-                </p>    
+                
+                    <input type ="text" name ="extdonation" size="8" placeholder="Extra Donation (RM)">&nbsp;
+                   
                 <p>
                 <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
