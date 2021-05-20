@@ -24,7 +24,9 @@
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
     </head>
+    
     <body>
+        <form method = "post" action = "/CharityConcert/bookingOrder">
         <div class="span">           
             <div>           
             
@@ -32,23 +34,25 @@
                 <img src="Image/x colab.png" class="icon2">
                 <img src="Image/caliph buskers logo.png" class="icon">
 
-        </div>
+            </div>
             <div class="divRight">
-            <ul>               
-                <li class="navigation"><a href="homepage.html">Home</a></li>
-                <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
-                <li class="navigation"><a href="bookingOrder.html">About Us</a></li>
-                <li class="navigation"><a href="receiptOrder.html">Contact Us</a></li>
-            </ul>  
+                <ul>               
+                    <li class="navigation"><a href="homepage.html">Home</a></li>
+                    <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
+                    <li class="navigation"><a href="bookingOrder.html">About Us</a></li>
+                    <li class="navigation"><a href="receiptOrder.html">Contact Us</a></li>
+                </ul>  
             </div>
         </div>
+            
         <hr>
+        
         <div class="background1">
             <div class="containerleft">
             
-                    <h1><b>Book Your Ticket Here.</b></h1>
-            <form method = "post" action = "/CharityConcert/bookingOrder">
-            <p>  </p>
+                <h1><b>Book Your Ticket Here.</b></h1>
+            
+                <p>  </p>
             
                 <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
                 <select size="1" name="gender">
@@ -61,16 +65,19 @@
                 <input class="input1" type ="text" name ="pNumber" size="49" placeholder="Phone Number">&nbsp;  
                 <input class="input1" type ="text" name ="email" size="49" placeholder="Email">&nbsp; 
                 
-            <p class="noteGrey">
+                <p class="noteGrey">
                 Scroll Down
-            </p>
-            <img class="arrow"
+                </p>
+                <img class="arrow"
                  src="Image/arrow down.png"
                     width="25" height="20"
                     alt="Arrow Down">
-            </form>
+            
             </div>
         </div>
+        
+        
+        
         <div class="background2">
             <div class="containerleft">
                 <table border="1" cellspacing="10" cellpadding="12" >
@@ -121,7 +128,10 @@
                 <div><a class="book" href="receiptOrder.html">Press Here for The Checkout.</a></div>
             </div>
         </div>
-        <div class="background3">
+        </form>
+        
+        <div 
+            class="background3">
         </div>       
     </body>
 </html>
