@@ -24,7 +24,7 @@ h1{
 }
 
 a{
-  background-color:  #204060;
+  background-color: #204060;
   color: white;
   padding: 14px 25px;
   text-align: center;
@@ -91,12 +91,12 @@ body {
 }
 .arrow{
     margin-top: -10px;
-    margin-left: 193px;
+    margin-left: 213px;
     opacity: 25%;
 }
 .noteGrey{
     margin-top: 25px;
-    margin-left: 160px;
+    margin-left: 185px;
     color: darkgray;
 }
 
