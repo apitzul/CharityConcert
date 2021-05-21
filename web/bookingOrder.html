@@ -20,6 +20,14 @@
             h1{
                 font-size: 34px;
             }
+            
+            td{
+                background-color:  #000000 ;
+                padding:10px;
+                border-radius: 25px;
+                padding-left: 20px;
+            }
+            
         </style>
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
@@ -78,7 +86,7 @@
         
         <div class="background2">
             <div class="containerleft">
-                <table border="1" cellspacing="10" cellpadding="12" >
+                <table cellspacing="10" cellpadding="10" >
                     <tbody>
                     <tr>
                         <td style="background-color: #204060"><b>Area</b><br></td>
@@ -88,26 +96,27 @@
                     <tr>
                         <td style="background-color: #ffcc00"><b>Yellow</b><br></td>
                         <td><b>Available</b><br></td>
-                        <td>0<br></td>
+                        <td><input class="input1" type = "text" name = "yellowTicket" size="10" placeholder="0/150" ></td>
                     </tr>
                     <tr>    
                         <td style="background-color: #ff6600"><b>Orange</b><br></td>
                         <td><b>Fully Booked</b><br></td>
-                        <td>Not Available<br></td>
+                        <td><input class="input1" type = "text" name = "orangeTicket" size="10" placeholder="150/150" ></td>
                     </tr>
                     <tr>
                         <td style="background-color: #00802b"><b>Green</b><br></td>
                         <td><b>Available</b><br></td>
-                        <td>3<br></td>
+                        <td><input class="input1" type = "text" name = "greenTicket" size="10" placeholder="0/150" ></td>
                     </tr>
                     <tr>
                         <td style="background-color: #000066"><b>Blue</b><br></td>
                         <td><b>Available</b><br></td>
-                        <td>3<br></td>
+                        <td><input class="input1" type = "text" name = "blueTicket" size="20" placeholder="0/150" ></td>
                     </tr>
                     </tbody> 
                 </table>
-                <p></p>
+                <p style="padding: 20px; "></p>
+
                 <select size="1" name="merchandise">
                     <option value="NoMerchandise">Select Merchandise Combo</option>
                     <option value="ComboN">None</option>

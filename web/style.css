@@ -5,10 +5,10 @@ and open the template in the editor.
 */
 /* 
     Created on : May 19, 2021, 8:51:21 PM
-    Author     : apitz
+    Author     : Afiq,Azim,Imman
 */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-body, h1,h2,h3,h4,h5,h6 {
+body, h1,h2,h3,h4,h5,h6 ,input,textarea,select{
     
     font-family: "Montserrat", sans-serif
 }
@@ -124,6 +124,7 @@ div{
 
 .input1{
     padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:40%
+    
 }
 select{
     padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:40%

@@ -37,6 +37,15 @@ and open the template in the editor.
                 border-radius: 25px;
                 padding-left: 20px;
             }
+            
+            .background8{
+                height: 970px;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                opacity: 0.5;
+            }
         </style>
         <title>Receipt Order Generated</title>
         <meta charset="UTF-8">
@@ -46,85 +55,95 @@ and open the template in the editor.
         
     </head>
     <body>
-        <div class="span">           
-            <div>
-                <img src="Image/logo white.png" class="icon">
-                <img src="Image/x colab.png" class="icon2">
-                <img src="Image/caliph buskers logo.png" class="icon">
+        <div>
+            <img class="background8" src="Image/background receipt.jpg">
+            <div class="span">           
+                <div>
+                    <img src="Image/logo white.png" class="icon">
+                    <img src="Image/x colab.png" class="icon2">
+                    <img src="Image/caliph buskers logo.png" class="icon">
+                </div>
+                <div class="divRight">
+                <ul>               
+                    <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
+                    <li class="navigation"><a href="bookingOrder.html">About Us</a></li>
+                    <li class="navigation"><a href="receiptOrder.html">Contact Us</a></li>
+                    <li class="navigation"><a class="book" href="bookingOrder.html">Book here</a></li>
+                </ul>  
+                </div>
             </div>
-            <div class="divRight">
-            <ul>               
-                <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
-                <li class="navigation"><a href="bookingOrder.html">About Us</a></li>
-                <li class="navigation"><a href="receiptOrder.html">Contact Us</a></li>
-                <li class="navigation"><a class="book" href="bookingOrder.html">Book here</a></li>
-            </ul>  
+            <div class="divPadding">
+                <h1>Ticket Booking Details</h1>
             </div>
-        </div>
-        <div class="divPadding">
-            <h1>Ticket Booking Details</h1>
-        </div>
-        <div class="divBackgroundGrey">
-           <h3>Customer Details:<br></h3>
-            <table>
-            <tbody>
-                <tr>
-                    <td><b>Full Name</b><br></td>
-                    <td>B<br></td>
-                </tr>
-                <tr>
-                    <td><b>Gender</b><br></td>
-                    <td>B<br></td>
-                </tr>
-                <tr>    
-                    <td><b>Age</b><br></td>
-                    <td>B<br></td>
-                </tr>
-                <tr>
-                    <td><b>Phone Number</b><br></td>
-                    <td>B<br></td>
-                </tr>
-            </tbody> 
-            </table> 
-        </div>
-        <br>
-        <div class="divBackgroundGrey">
-            <h3>Your Ticket</h3>
-
-
-            
-            <table>
+            <div style="display:flex; align-content: center">
+                <div class="divBackgroundGrey">
+                <h2>Customer Details<br></h2>
+                <table>
                 <tbody>
-                    <tr>    
-                        <td><b>Number Of Ticket</b><br></td>
-                        <td><b>: </b>3<br></td>
+                    <tr>
+                        <td><b>Full Name</b><br></td>
+                        <td>Muhammad Afiq Bin Zulkiffle<br></td>
                     </tr>
                     <tr>
-                        <td><b>Merchandise Details</b><br></td>
-                        <td><b>: </b>Combo A<br></td>
-                    </tr>
-                    <tr>
-                        <td><b>Ticket Price</b><br></td>
-                        <td><b>: </b>RM90 (x3 Ticket Area A)<br></td>
+                        <td><b>Gender</b><br></td>
+                        <td>Male<br></td>
                     </tr>
                     <tr>    
-                        <td><b>Total Price</b><br></td>
-                        <td><b>: </b>RM270<br></td>
+                        <td><b>Age</b><br></td>
+                        <td>21<br></td>
                     </tr>
-                    
-
+                    <tr>
+                        <td><b>Phone Number</b><br></td>
+                        <td>0173714641<br></td>
+                    </tr>
                 </tbody> 
-            </table>
-            <a href="ticketview.html" target="_blank">Print Your Ticket</a><br>
-            <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
+                </table> 
+                </div>
 
+                <div class="divBackgroundGrey" >
+                    <h2>Your Ticket</h2>
+
+
+
+                    <table>
+                        <tbody>
+                            <tr>    
+                                <td><b>Number Of Ticket</b><br></td>
+                                <td><b></b>3<br></td>
+                            </tr>
+                            <tr>
+                                <td><b>Merchandise Details</b><br></td>
+                                <td><b></b>Combo A<br></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ticket Price</b><br></td>
+                                <td><b></b>RM90 (x3 Ticket Area A)<br></td>
+                            </tr>
+                            <tr>    
+                                <td><b>Total Price</b><br></td>
+                                <td><b></b>RM270<br></td>
+                            </tr>
+
+
+                        </tbody> 
+                    </table>
+                    <p></p>
+                    <a class="input2" href="ticketview.html" target="_blank">Print Your Ticket</a><br>
+                    <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="divPadding">
+                <h1>Thank You !!<br></h1>
+                <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
+                <p class="note">*You may save or print the full receipt</p>
+                <br><br>
+                <a class="input2" href="homepage.html" >Finish Payment</a>        
+            </div>    
         </div>
-        <div class="divPadding">
-            <h1>Thank You !!<br></h1>
-            <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
-            <p class="note">*You may save or print the full receipt</p>
-            <br><br>
-            <a href="homepage.html" >Finish Payment</a>        
-        </div>
+        
     </body>
 </html>
