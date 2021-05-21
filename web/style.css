@@ -24,8 +24,8 @@ h1{
 }
 
 a{
-  background-color: #204060;
-  color: white;
+  background-color: black;
+  color: #2eb82e;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
@@ -33,10 +33,10 @@ a{
   border-radius: 40px;
 }
 a::before{
-  background-color: #204060;  
+  background-color: black;  
 }
 a:hover{
-  background-color: #132639 ;  
+  background-color: #003300 ;  
 }
 body {
   
@@ -131,6 +131,7 @@ select{
 
  .book{
     background-color: #006600;
+    color: white;
  }
             
 .book:hover{
@@ -174,6 +175,7 @@ select{
 }
             
 .divLeft{
+    margin-top: 40px;
         padding: 70px;
 }
             
@@ -217,8 +219,4 @@ select{
 }
 .input3:hover{
   background-color: #660000;  
-}
-
-.line{
-    margin-top: -10px; 
 }
