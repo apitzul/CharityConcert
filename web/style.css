@@ -221,3 +221,10 @@ select{
 .input3:hover{
   background-color: #660000;  
 }
+
+.center{
+        text-align: center;
+        display: flex;
+        margin-top: 10px;
+}
+
