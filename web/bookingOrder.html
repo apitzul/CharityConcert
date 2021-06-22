@@ -34,23 +34,23 @@
     </head>
     
     <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="homepage.html">Home</a>
+            <a href="aboutUs.html">About</a>
+            <a href="aboutArtist.html">Artist</a>
+            <a href="contactUs.html">Contact</a>
+            <a href="staffLogin.html">Admin</a>
+        </div>
+        
+        <div id="main">
         <form method = "post" action = "receiptOrder.html">
         <div class="span">           
-            <div>           
-            
-                <img src="Image/logo white.png" class="icon">
-                <img src="Image/x colab.png" class="icon2">
-                <img src="Image/caliph buskers logo.png" class="icon">
-
-            </div>
-            <div class="divRight">
-                <ul>               
-                    <li class="navigation"><a href="homepage.html">Home</a></li>
-                    <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
-                    <li class="navigation"><a href="aboutUs.html">About Us</a></li>
-                    <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
-                </ul>  
-            </div>
+                <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
+                <div>             
+                    <img src="Image/logo white.png" class="icon">
+                    <img src="Image/caliph buskers logo.png" class="icon">
+                </div>    
         </div>
         
         <div class="background1">
@@ -134,9 +134,26 @@
         </div>
         <div 
             class="background3">
-        </div>  
-        </form>
-        
+        </div>
+        </div>
+        </form> 
+        </div>
+          <script>
+            /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "250px";
+                  document.getElementById("main").style.marginLeft = "250px";
+                  document.body.style.backgroundColor = "rgba(0,0,0,0.-4)";
+                }
+
+                /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+                function closeNav() {
+                  document.getElementById("mySidenav").style.width = "0";
+                  document.getElementById("main").style.marginLeft = "0";
+                  document.body.style.backgroundColor = "black";
+                } 
+        </script>
+    </body>   
              
     </body>
 </html>
