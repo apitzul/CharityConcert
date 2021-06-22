@@ -14,13 +14,7 @@
             .span{
                 display: flex;
             }
-            .icon{
-                width: 85px;
-                height: 85px;
-                padding: 15px;
-                
-            }
-        
+            
             .picture1{
                 width: 450px;
                 height: 450px;
@@ -34,14 +28,7 @@
                 padding: 15px;
                 margin-left: -20px;
             } 
-            
-            .icon2{
-                width: 30px;
-                height: 30px;
-                margin-left: 5px;
-                
-            }
-            
+
             p{
                 font-size: 14px; 
                 line-height: 1.6;
@@ -93,28 +80,29 @@
         <title>About Us.</title>
     </head>
     <body>
-        <div>
+         <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="homepage.html">Home</a></li>
+            <a href="aboutArtist.html">Artist</a></li>
+            <a href="contactUs.html">Contact</a></li>
+            <a href="staffLogin.html">Admin</a></li>
+            <a class="book" href="bookingOrder.html">Book</a>
+          </div>
+
+        <div id="main">
             <img  class="background6" src="Image/InsideStadiumConcert.jpg">
             <div class="span">           
-                <div>
+                <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
+                <div>             
                     <img src="Image/logo white.png" class="icon">
-                    <img src="Image/x colab.png" class="icon2">
                     <img src="Image/caliph buskers logo.png" class="icon">
-                </div>
-                <div class="divRight">
-                <ul>               
-                    <li class="navigation"><a href="homepage.html">Home</a></li>
-                    <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
-                    <li class="navigation"><a href="contactUs.html">Contact Us</a></li>
-                    <li class="navigation"><a href="staffLogin.html">Admin</a></li>
-                    <li class="navigation"><a class="book" href="bookingOrder.html">Book here</a></li>
-                </ul>  
-                </div>
+                </div>    
             </div>
             
             <div>
                 <article class="divLeft">
                     <h1><b>About Us, Our Story.</b></h1>
+                    
                     <p>We believe that everyone deserves to have a happy and cheerful life. Always helping each other will make other <br>
                        people happy: Our goal is to discover any poor community that will affect their daily life. Since 2016, our <br>
                        organization has carried out various charitable activities that have helped various walks of life. The concept <br>
@@ -128,5 +116,20 @@
                 <img src="Image/logo color.png" class="logo">
             </div>
         </div>
+        <script>
+            /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "250px";
+                  document.getElementById("main").style.marginLeft = "250px";
+                  document.body.style.backgroundColor = "rgba(0,0,0,0.-4)";
+                }
+
+                /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+                function closeNav() {
+                  document.getElementById("mySidenav").style.width = "0";
+                  document.getElementById("main").style.marginLeft = "0";
+                  document.body.style.backgroundColor = "black";
+                } 
+        </script>
     </body>
 </html>
