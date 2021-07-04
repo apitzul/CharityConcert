@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
          {
              System.out.println("FLAG SUCCESS");
              request.setAttribute("username", username); 
-             request.getRequestDispatcher("/index.html").forward(request, response);
+             request.getRequestDispatcher("/StaffHomepage.jsp").forward(request, response);
          }
          else
          {

@@ -108,6 +108,7 @@ body {
 
 .divLeft{
     text-align: left;
+    margin-left: 30px;
 }
 
 div{
@@ -128,10 +129,10 @@ select{
     color: white;
     padding: 12px 23px;
     text-align: left;
-    ext-decoration: none;
     display: inline-block;
     border-radius: 40px;
     border:0px;
+    text-decoration: none;
  }
             
 .book:hover{

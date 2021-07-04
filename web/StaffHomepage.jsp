@@ -1,4 +1,12 @@
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<sql:setDataSource var="myDatasource"
+ driver="org.apache.derby.jdbc.ClientDriver"
+ url="jdbc:derby://localhost:1527//CharityConcert" user="app"
+ password="app"/>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>  
     <head>
         <style>            
@@ -32,16 +40,17 @@
         </style>
         
         <link rel="stylesheet" href="style.css">
-        <title>Admin Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View Form Page</title>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="aboutUs.html">About</a>
             <a href="aboutArtist.html">Artist</a>
-            <a href="contactUs.html">Contact</a>
-            <a href="staffLogin.html">Admin</a>
-            <a class="book" href="bookingOrder.html">Book</a>
+            <a href="contactUs.jsp">Contact</a>
+            <a href="staffLogin.jsp">Admin</a>
+            <a class="book" href="bookingOrder.jsp">Book</a>
         </div>
         
         <div id="main">
@@ -55,18 +64,51 @@
             </div>
             
             <div>
-                <h1>Welcome to Administration Page</h1>
-                <p>Let's enjoy the one and only "The Special Band" from Malaysia while doing charity to the local community. <br>
-                   You also stand a chance to listen to the latest album from the Caliph Buskers artist group. <br>
-                   This concert will be one of the best moments of your life and you will not regret it. <br>
-                   Don't forget to book your seat and meet us at <b>Axiata Arena, Kuala Lumpur</b> on <b>20 June 2021</b> from 9pm. <br>
-                </p>
-                </article>      
-                <div><a class="book" href="bookingOrder.jsp">Make your booking here! </a></div>    
-                <div><a class="book" href="bookingOrder.jsp">Make your booking here! </a></div>
-            </div>     
-        </div>
-        
+                <c:set var="areaId" value="${param.areaId}"/>
+                <c:set var="areaName" value="${param.areaName}"/>
+                <c:set var="areaCapacity" value="${param.areaCapacity}"/>
+                <c:set var="areaStatus" value="${param.areaStatus}"/>
+                <c:set var="areaPrice" value="${param.areaPrice}"/>
+                <c:set var="bookId" value="${param.bookId}"/>
+                <c:set var="donorId" value="${param.donorId}"/>
+                <c:set var="merchandiseId" value="${param.merchandiseId}"/>
+                <c:set var="totalPrice" value="${param.totalPrice}"/>
+                <c:set var="addPrice" value="${param.addPrice}"/>
+                <c:set var="finalPrice" value="${param.finalPrice}"/>
+                <c:set var="bookDate" value="${param.bookDate}"/>
+                <c:set var="donorFname" value="${param.donorFname}"/>
+                <c:set var="donorGender" value="${param.donorGender}"/>
+                <c:set var="donorAge" value="${param.donorAge}"/>
+                <c:set var="donorEmail" value="${param.donorEmail}"/>
+                <c:set var="donorPhone" value="${param.donorPhone}"/>
+                <c:set var="merchandiseType" value="${param.merchandiseType}"/>
+                <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
+
+                <p>
+                <h1 class="divLeft" >Area</h1>
+                <sql:query var="result" dataSource="${myDatasource}">
+                SELECT * FROM AREA
+                </sql:query>
+
+                <table border="3">
+                <tr>
+                    <c:forEach var="columnName" items="${result.columnNames}">
+                    <th><c:out value="${columnName}"/></th>
+                    </c:forEach>
+                </tr>
+
+                <c:forEach var="row" items="${result.rows}">
+                <tr>
+                    <td><c:out value="${row.AREA_ID}"/></td>
+                    <td><c:out value="${row.AREA_NAME}"/></td>
+                    <td><c:out value="${row.AREA_CAPACITY}"/></td>
+                    <td><c:out value="${row.AREA_STATUS}"/></td>
+                    <td><c:out value="${row.AREA_PRICE}"/></td>
+                </tr>
+                </c:forEach>
+                </table>
+            <a href="staffLogin.jsp">Return</a>
+            </p>
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {

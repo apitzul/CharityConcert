@@ -43,6 +43,6 @@ public class LoginDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "Invalid user credentials";
+        return "Invalid Username or Password";
     }
 }

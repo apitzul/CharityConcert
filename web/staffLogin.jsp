@@ -19,7 +19,7 @@
             <a href="homepage.html">Home</a>
             <a href="aboutUs.html">About</a>
             <a href="aboutArtist.html">Artist</a>
-            <a href="contactUs.html">Contact</a>
+            <a href="contactUs.jsp">Contact</a>
             <a class="book" href="bookingOrder.jsp">Book</a>
          </div>
         
@@ -41,11 +41,11 @@
                     <p>  </p>    
 
                     <input class="input1" type ="text" name = "username" size="49" placeholder="Enter Username" >&nbsp;
-                    <input class="input1" type ="text" name ="password" size="31" placeholder="Enter Password">&nbsp;
+                    <input class="input1" type ="password" name ="password" size="31" placeholder="Enter Password">&nbsp;
 
-                    <p>  </p>
+                    <p></p>
 
-                    <input class="input2" type="submit" value="Submit">
+                    <input class="input2" type="submit" value="Log in">
                     <p style="color:red"><%=(request.getAttribute("errMessage") == null) ? ""
          : request.getAttribute("errMessage")%></p>
                 </div>            

@@ -40,7 +40,7 @@
             <a href="aboutUs.html">About</a>
             <a href="aboutArtist.html">Artist</a>
             <a href="contactUs.jsp">Contact</a>
-            <a href="staffLogin.html">Admin</a>
+            <a href="staffLogin.jsp">Admin</a>
         </div>
         
         <div id="main">
