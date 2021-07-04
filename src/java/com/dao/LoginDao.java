@@ -31,7 +31,7 @@ public class LoginDao {
         try {
             con = DBconnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("Select username, password from customers");
+            resultSet = statement.executeQuery("Select username, password from account");
             while (resultSet.next())
             {
                 userNameDB = resultSet.getString("username");

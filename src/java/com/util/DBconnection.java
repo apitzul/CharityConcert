@@ -15,19 +15,18 @@ import java.sql.DriverManager;
 public class DBconnection {
     public static Connection createConnection() {
         Connection con = null;
-        String url = "jdbc:derby://localhost:1527/customers";
+        String url = "jdbc:derby://localhost:1527/CharityConcert";
         String username = "app";
         String password = "app";
         
-        try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            }
-            catch (ClassNotFoundException e)
-            {
-                e.printStackTrace();
-            }
-            con = DriverManager.getConnection(url, username, password);
+        try{
+            
+            String driver = "org.apache.derby.jdbc.ClientDriver";
+            String connectionString = "jdbc:derby://localhost:1527/CharityConcert;create=true;user=app;password=app";
+            
+            Class.forName(driver);
+            
+            con = DriverManager.getConnection(connectionString);
             System.out.println("Printing connection object "+con);
         }
         catch (Exception e)

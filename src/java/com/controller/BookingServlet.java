@@ -10,15 +10,17 @@ import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author azimd
+ * @author apitz
  */
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "BookingServlet", urlPatterns = {"/BookingServlet"})
+public class BookingServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet BookingServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet BookingServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -70,7 +72,7 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
        
         System.out.println("FLAG INTO SERVLET");
@@ -91,7 +93,7 @@ public class LoginServlet extends HttpServlet {
          {
              System.out.println("FLAG SUCCESS");
              request.setAttribute("username", username); 
-             request.getRequestDispatcher("/index.html").forward(request, response);
+             request.getRequestDispatcher("/StaffHomepage.jsp").forward(request, response);
          }
          else
          {
@@ -100,7 +102,6 @@ public class LoginServlet extends HttpServlet {
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
          }
     }
-
     /**
      * Returns a short description of the servlet.
      *

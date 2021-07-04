@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.controller.LoginServlet" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,11 +20,11 @@
             <a href="aboutUs.html">About</a>
             <a href="aboutArtist.html">Artist</a>
             <a href="contactUs.html">Contact</a>
-            <a class="book" href="bookingOrder.html">Book</a>
+            <a class="book" href="bookingOrder.jsp">Book</a>
          </div>
         
         <div id="main">
-        <form method = "post" action = "homepage.html">
+        <form name="form" action="LoginServlet" method="POST">
             <div class="span">                  
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
@@ -32,21 +33,23 @@
                 </div>    
             </div>
         
-        <div class="background1">
-            <div class="divLeft">
-            
-                <h1><b>Please Log In.</b></h1>
-            
-                <p>  </p>    
-                
-                <input class="input1" type = "text" name = "username" size="49" placeholder="Enter Username" >&nbsp;
-                <input class="input1" type ="text" name ="password" size="31" placeholder="Enter Password">&nbsp;
-                
-                <p>  </p>
-                
-                <input class="input2" type="submit" value="Submit">
-            </div>            
-        </div>
+            <div class="background1">
+                <div class="divLeft">
+
+                    <h1><b>Please Log In.</b></h1>
+
+                    <p>  </p>    
+
+                    <input class="input1" type ="text" name = "username" size="49" placeholder="Enter Username" >&nbsp;
+                    <input class="input1" type ="text" name ="password" size="31" placeholder="Enter Password">&nbsp;
+
+                    <p>  </p>
+
+                    <input class="input2" type="submit" value="Submit">
+                    <p style="color:red"><%=(request.getAttribute("errMessage") == null) ? ""
+         : request.getAttribute("errMessage")%></p>
+                </div>            
+            </div>
         </form>
         </div>
         <script>
