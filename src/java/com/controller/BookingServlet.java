@@ -5,6 +5,7 @@
  */
 package com.controller;
 
+import com.bean.BookingBean;
 import com.bean.LoginBean;
 import com.dao.LoginDao;
 import java.io.IOException;
@@ -76,20 +77,22 @@ public class BookingServlet extends HttpServlet {
  
        
         System.out.println("FLAG INTO SERVLET");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String fullName = request.getParameter("fullName");
+        String age = request.getParameter("age");
+        String gender = request.getParameter("gender");
+        String phoneNum = request.getParameter("pNumber");
+        String email = request.getParameter("email");
+
  
-        LoginBean loginBean = new LoginBean(); 
+        BookingBean bookingBean = new BookingBean(); 
  
-        loginBean.setUsername(username); 
-        loginBean.setPassword(password);
+        
  
         LoginDao loginDao = new LoginDao(); 
  
-        String userValidate = loginDao.authenticateUser(loginBean); 
-        
+
  
-        if(userValidate.equals("SUCCESS")) 
+        /*if(userValidate.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS");
              request.setAttribute("username", username); 
@@ -100,7 +103,8 @@ public class BookingServlet extends HttpServlet {
              System.out.println("FLAG FAIL");
              request.setAttribute("errMessage", userValidate); 
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
-         }
+         }*/
+        
     }
     /**
      * Returns a short description of the servlet.
