@@ -126,6 +126,12 @@ select{
  .book{
     background-color: #002266;
     color: white;
+    padding: 12px 23px;
+    text-align: left;
+    ext-decoration: none;
+    display: inline-block;
+    border-radius: 40px;
+    border:0px;
  }
             
 .book:hover{
@@ -146,11 +152,11 @@ select{
         padding: 5px;
 }
  .menuicon{
-                width: 80px;
-                height: 80px;
-                padding: 25px;
+        width: 80px;
+        height: 80px;
+        padding: 25px;
                 
-            }        
+}        
 .picture1{
         width: 450px;
         height: 450px;
