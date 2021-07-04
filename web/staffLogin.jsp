@@ -1,4 +1,11 @@
-<!--staffLogin.html-->
+<%-- 
+    Document   : staffLogin
+    Created on : Jul 4, 2021, 9:36:32 PM
+    Author     : azimd
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Staff Login Page</title>
