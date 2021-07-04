@@ -5,8 +5,12 @@
  */
 package com.controller;
 
+import com.bean.AreaBean;
 import com.bean.BookingBean;
+import com.bean.DonorBean;
+import com.dao.dataDB;
 import com.bean.LoginBean;
+import com.bean.MerchandiseBean;
 import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -82,13 +86,28 @@ public class BookingServlet extends HttpServlet {
         String gender = request.getParameter("gender");
         String phoneNum = request.getParameter("pNumber");
         String email = request.getParameter("email");
-
- 
-        BookingBean bookingBean = new BookingBean(); 
- 
         
- 
-        LoginDao loginDao = new LoginDao(); 
+        String yellowTicket = request.getParameter("yellowTicket");
+        String orangeTicket = request.getParameter("orangeTicket");
+        String greenTicket = request.getParameter("greenTicket");
+        String blueTicket = request.getParameter("blueTicket");
+
+        String merch = request.getParameter("merchandise");
+        String extra = request.getParameter("extdonation");
+        
+        BookingBean bookingBean = new BookingBean(); 
+        DonorBean donorBean = new DonorBean();
+        MerchandiseBean merchBean = new MerchandiseBean();
+        AreaBean areaBean= new AreaBean();
+        dataDB table= new dataDB();
+        
+        donorBean.setDonorID(table.nextID("donor"));
+        donorBean.setDonorName(fullName);
+        donorBean.setDonorAge(Integer.parseInt(age));
+        donorBean.setDonorEmail(email);
+        donorBean.setDonorPhone(phoneNum);
+
+        
  
 
  
