@@ -9,7 +9,7 @@ package com.bean;
  *
  * @author azimd
  */
-public class MerchandiseBean {
+public class MerchandiseBean implements java.io.Serializable{
     private int merchandiseID;
     private String merchandiseType;
     private double merchandisePrice;

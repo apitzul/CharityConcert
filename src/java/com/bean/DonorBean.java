@@ -9,7 +9,7 @@ package com.bean;
  *
  * @author azimd
  */
-public class DonorBean {
+public class DonorBean implements java.io.Serializable{
     private int donorID;
     private String donorName;
     private String donorGender;
