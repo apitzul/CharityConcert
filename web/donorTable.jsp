@@ -67,66 +67,39 @@
             </div>
 
             <div>
-                <c:set var="areaId" value="${param.areaId}"/>
-                <c:set var="areaName" value="${param.areaName}"/>
-                <c:set var="areaCapacity" value="${param.areaCapacity}"/>
-                <c:set var="areaStatus" value="${param.areaStatus}"/>
-                <c:set var="areaPrice" value="${param.areaPrice}"/>
-                <c:set var="merchandiseId" value="${param.merchandiseId}"/>
-                <c:set var="merchandiseType" value="${param.merchandiseType}"/>
-                <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
+                <c:set var="donorId" value="${param.donorId}"/>
+                <c:set var="donorFname" value="${param.donorFname}"/>
+                <c:set var="donorGender" value="${param.donorGender}"/>
+                <c:set var="donorAge" value="${param.donorAge}"/>
+                <c:set var="donorEmail" value="${param.donorEmail}"/>
+                <c:set var="donorPhone" value="${param.donorPhone}"/>
 
                 <div class="divLeft w3-panel">
-                <h1>Area</h1>
+                <h1>Donor</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM AREA
+                SELECT * FROM DONOR
                 </sql:query>
                 <br>
                 <table class="w3-table w3-striped w3-white">
                 <tr>
-                    <th>Area Id</th>
-                    <th>Area Name</th>
-                    <th>Area Capacity</th>
-                    <th>Area Status</th>
-                    <th>Area Price</th>
+                    <th>Donor Id</th>
+                    <th>Donor Full Name</th>
+                    <th>Donor Gender</th>
+                    <th>Donor Email</th>
+                    <th>Donor Phone Number</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.AREA_ID}"/></td>
-                    <td><c:out value="${row.AREA_NAME}"/></td>
-                    <td><c:out value="${row.AREA_CAPACITY}"/></td>
-                    <td><c:out value="${row.AREA_STATUS}"/></td>
-                    <td><c:out value="${row.AREA_PRICE}"/></td>
+                    <td><c:out value="${row.DONOR_ID}"/></td>
+                    <td><c:out value="${row.DONOR_FULL_NAME}"/></td>
+                    <td><c:out value="${row.DONOR_AGE}"/></td>
+                    <td><c:out value="${row.DONOR_EMAIL}"/></td>
+                    <td><c:out value="${row.DONOR_PHONE_NUMBER}"/></td>
                 </tr>
                 </c:forEach>
                 </table>
                 </div>
-            </div>
-                <br>    
-            <div>
-                <div class="divLeft w3-panel">
-                <h1>Merchandise</h1>
-                <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM MERCHANDISE
-                </sql:query>
-                <br>
-                <table class="w3-table w3-striped w3-white">
-                <tr>
-                    <th>Merchandise Id</th>
-                    <th>Merchandise Type</th>
-                    <th>Merchandise Price</th>
-                </tr>
-                <c:forEach var="row" items="${result.rows}">
-                <tr>
-                    <td><c:out value="${row.MERCHANDISE_ID}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_TYPE}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
-                </tr>
-                </c:forEach>
-                </table>
-                <br>
-                </div>
-            </div>    
+            </div> 
         </div>
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */

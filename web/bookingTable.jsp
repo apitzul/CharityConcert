@@ -67,66 +67,44 @@
             </div>
 
             <div>
-                <c:set var="areaId" value="${param.areaId}"/>
-                <c:set var="areaName" value="${param.areaName}"/>
-                <c:set var="areaCapacity" value="${param.areaCapacity}"/>
-                <c:set var="areaStatus" value="${param.areaStatus}"/>
-                <c:set var="areaPrice" value="${param.areaPrice}"/>
+                <c:set var="bookId" value="${param.bookId}"/>
+                <c:set var="donorId" value="${param.donorId}"/>
                 <c:set var="merchandiseId" value="${param.merchandiseId}"/>
-                <c:set var="merchandiseType" value="${param.merchandiseType}"/>
-                <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
+                <c:set var="totalPrice" value="${param.totalPrice}"/>
+                <c:set var="addPrice" value="${param.addPrice}"/>
+                <c:set var="finalPrice" value="${param.finalPrice}"/>
+                <c:set var="bookDate" value="${param.bookDate}"/>
 
                 <div class="divLeft w3-panel">
-                <h1>Area</h1>
+                <h1>Booking</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM AREA
+                SELECT * FROM BOOKING
                 </sql:query>
                 <br>
                 <table class="w3-table w3-striped w3-white">
                 <tr>
-                    <th>Area Id</th>
-                    <th>Area Name</th>
-                    <th>Area Capacity</th>
-                    <th>Area Status</th>
-                    <th>Area Price</th>
+                    <th>Booking Id</th>
+                    <th>Donor Id</th>
+                    <th>Merchandise Id</th>
+                    <th>Total Price</th>
+                    <th>Add Value</th>
+                    <th>Final Price</th>
+                    <th>Booking Date</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.AREA_ID}"/></td>
-                    <td><c:out value="${row.AREA_NAME}"/></td>
-                    <td><c:out value="${row.AREA_CAPACITY}"/></td>
-                    <td><c:out value="${row.AREA_STATUS}"/></td>
-                    <td><c:out value="${row.AREA_PRICE}"/></td>
+                    <td><c:out value="${row.BOOKING_ID}"/></td>
+                    <td><c:out value="${row.DONOR_ID}"/></td>
+                    <td><c:out value="${row.MERCHANDISE_ID}"/></td>
+                    <td><c:out value="${row.TOTAL_PRICE}"/></td>
+                    <td><c:out value="${row.ADD_VALUE}"/></td>
+                    <td><c:out value="${row.FINAL_PRICE}"/></td>
+                    <td><c:out value="${row.BOOKING_DATE}"/></td>
                 </tr>
                 </c:forEach>
                 </table>
                 </div>
             </div>
-                <br>    
-            <div>
-                <div class="divLeft w3-panel">
-                <h1>Merchandise</h1>
-                <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM MERCHANDISE
-                </sql:query>
-                <br>
-                <table class="w3-table w3-striped w3-white">
-                <tr>
-                    <th>Merchandise Id</th>
-                    <th>Merchandise Type</th>
-                    <th>Merchandise Price</th>
-                </tr>
-                <c:forEach var="row" items="${result.rows}">
-                <tr>
-                    <td><c:out value="${row.MERCHANDISE_ID}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_TYPE}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
-                </tr>
-                </c:forEach>
-                </table>
-                <br>
-                </div>
-            </div>    
         </div>
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
