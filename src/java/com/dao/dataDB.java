@@ -16,7 +16,7 @@ import java.sql.Statement;
  * @author apitz
  */
 public class dataDB {
-    public int getSize(String tableName){
+    public int getMaxID(String tableName,String id){
         
         int size=0;
         
@@ -27,7 +27,7 @@ public class dataDB {
         try {
             con = DBconnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("Select count(*) from "+tableName);
+            resultSet = statement.executeQuery("Select MAX("+id+") as count from "+tableName);
             resultSet.next();
             size=resultSet.getInt("count");
         } catch (SQLException e) {
@@ -37,9 +37,9 @@ public class dataDB {
         return size;
     }
     
-    public int nextID(String tableName){
+    public int nextID(String tableName,String id){
     
-        return (getSize(tableName)+1);
+        return (getMaxID(tableName,id)+1);
     }
     
     

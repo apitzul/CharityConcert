@@ -8,12 +8,18 @@ package com.controller;
 import com.bean.AreaBean;
 import com.bean.BookingBean;
 import com.bean.DonorBean;
+import com.dao.AreaDao;
 import com.dao.dataDB;
 import com.bean.LoginBean;
 import com.bean.MerchandiseBean;
+import com.dao.BookingDao;
 import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -87,42 +93,100 @@ public class BookingServlet extends HttpServlet {
         String phoneNum = request.getParameter("pNumber");
         String email = request.getParameter("email");
         
-        String yellowTicket = request.getParameter("yellowTicket");
-        String orangeTicket = request.getParameter("orangeTicket");
-        String greenTicket = request.getParameter("greenTicket");
-        String blueTicket = request.getParameter("blueTicket");
+        int yellowTicket = Integer.parseInt(request.getParameter("yellowTicket"));
+        int orangeTicket = Integer.parseInt(request.getParameter("orangeTicket"));
+        int greenTicket = Integer.parseInt(request.getParameter("greenTicket"));
+        int blueTicket = Integer.parseInt(request.getParameter("blueTicket"));
 
         String merch = request.getParameter("merchandise");
         String extra = request.getParameter("extdonation");
         
+        double addValue = Double.parseDouble(extra);
+        
+        
         BookingBean bookingBean = new BookingBean(); 
         DonorBean donorBean = new DonorBean();
         MerchandiseBean merchBean = new MerchandiseBean();
-        AreaBean areaBean= new AreaBean();
+        
         dataDB table= new dataDB();
         
-        donorBean.setDonorID(table.nextID("donor"));
+        donorBean.setDonorID(table.nextID("DONOR","DONOR_ID"));
         donorBean.setDonorName(fullName);
         donorBean.setDonorAge(Integer.parseInt(age));
         donorBean.setDonorEmail(email);
         donorBean.setDonorPhone(phoneNum);
 
+        donorBean.toString();
         
+        AreaDao areaDao=new AreaDao();
+        
+        AreaBean areaBeanY= new AreaBean();
+        AreaBean areaBeanO= new AreaBean();
+        AreaBean areaBeanG= new AreaBean();
+        AreaBean areaBeanB= new AreaBean();
+        
+        areaBeanY.setAreaID(1);
+        areaBeanY.setAreaCapacity(yellowTicket);
+        areaBeanO.setAreaID(2);
+        areaBeanO.setAreaCapacity(orangeTicket);
+        areaBeanG.setAreaID(3);
+        areaBeanG.setAreaCapacity(greenTicket);
+        areaBeanB.setAreaID(4);
+        areaBeanB.setAreaCapacity(blueTicket);
+        
+        try {
+            areaDao.updateAreaToDB(areaBeanY);
+            areaDao.updateAreaToDB(areaBeanO);
+            areaDao.updateAreaToDB(areaBeanG);
+            areaDao.updateAreaToDB(areaBeanB);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
  
+        bookingBean.setBookingID(table.nextID("BOOKING","BOOKING_ID"));
+        bookingBean.setDonorID(donorBean.getDonorID());
+        if(merch.equals("COMBO A"))
+            bookingBean.setMerchandiseID(1);
+        else if(merch.equals("COMBO B"))
+            bookingBean.setMerchandiseID(2);
+        else if(merch.equals("COMBO C"))
+            bookingBean.setMerchandiseID(3);
+        else
+            bookingBean.setMerchandiseID(0);
+        
 
- 
-        /*if(userValidate.equals("SUCCESS")) 
+        
+        
+        ArrayList<AreaBean> areaList= (ArrayList<AreaBean>) areaDao.getAreaFromDB();
+
+        double finalPrice=0.0;    
+        
+            for(int i=0;i<areaList.size();i++){ 
+              AreaBean temp= (AreaBean)areaList.get(i);
+              finalPrice+=yellowTicket*temp.getAreaPrice();
+            }
+
+        System.out.println("FinalPrice = "+finalPrice);
+            
+        bookingBean.setBookingDate(java.time.LocalDate.now().toString());
+        bookingBean.setFinalPrice(finalPrice);
+        bookingBean.setAddValue(addValue);
+        bookingBean.setTotalPrice(bookingBean.getFinalPrice()+bookingBean.getAddValue());
+
+        BookingDao bookDao=new BookingDao();
+        String insertBooking = bookDao.insertBooking(bookingBean);
+        
+        if(insertBooking.equals("SUCCESS")) 
          {
-             System.out.println("FLAG SUCCESS");
-             request.setAttribute("username", username); 
-             request.getRequestDispatcher("/StaffHomepage.jsp").forward(request, response);
+             System.out.println("FLAG SUCCESS INSERT BOOKING");             
+             request.getRequestDispatcher("/receiptOrder.jsp").forward(request, response);
          }
          else
          {
-             System.out.println("FLAG FAIL");
-             request.setAttribute("errMessage", userValidate); 
+             System.out.println("FLAG FAIL TO INSERT BOOKING");       
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
-         }*/
+         }
         
     }
     /**

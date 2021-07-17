@@ -7,6 +7,7 @@ package com.controller;
 
 import com.bean.ContactBean;
 import com.bean.LoginBean;
+import com.dao.ContactDao;
 import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -87,25 +88,22 @@ public class ContactServlet extends HttpServlet {
         contactBean.setContactMessage(contactMessage); 
         contactBean.setContactMessage(contactMessage); 
  
-        /*
-        LoginDao loginDao = new LoginDao(); 
- 
-        String userValidate = loginDao.authenticateUser(loginBean); 
         
+        ContactDao contactDao = new ContactDao(); 
  
+        String userValidate = contactDao.insertMessageToDB(contactBean);
+
         if(userValidate.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS");
-             request.setAttribute("username", username); 
              request.getRequestDispatcher("/index.html").forward(request, response);
          }
          else
          {
              System.out.println("FLAG FAIL");
-             request.setAttribute("errMessage", userValidate); 
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
          }
-        */
+        
     }
 
     /**

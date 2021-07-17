@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -89,13 +90,16 @@ public class LoginServlet extends HttpServlet {
  
         if(userValidate.equals("SUCCESS")) 
          {
-             System.out.println("FLAG SUCCESS");
-             request.setAttribute("username", username); 
+             HttpSession session = request.getSession();
+             
+             System.out.println("FLAG SUCCESS TO LOGIN");
+             
+             session.setAttribute("username", loginBean); 
              request.getRequestDispatcher("/StaffHomepage.jsp").forward(request, response);
          }
          else
          {
-             System.out.println("FLAG FAIL");
+             System.out.println("FLAG FAIL TO LOGIN");
              request.setAttribute("errMessage", userValidate); 
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
          }

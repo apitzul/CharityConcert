@@ -1,4 +1,5 @@
 <!--bookingOrder.html-->
+<%@page import="com.controller.BookingServlet" %>
 <html>
     <head>
         <style>            
@@ -44,7 +45,7 @@
         </div>
         
         <div id="main">
-        <form method = "post" action = "receiptOrder.html">
+        <form name="form" action="BookingServlet" method="POST">
         <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
