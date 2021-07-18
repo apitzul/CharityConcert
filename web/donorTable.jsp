@@ -51,8 +51,9 @@
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="StaffHomepage.jsp">Area Table</a>
+            <a href="StaffHomepage.jsp">Merchandise Table</a>
             <a href="bookingTable.jsp">Booking Table</a>
-            <a href="donorTable.jsp">Donor Table</a>
             <a class="input3" style="text-align: left;" href="staffLogin.jsp">Log Out</a>
         </div>
         

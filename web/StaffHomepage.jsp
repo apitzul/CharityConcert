@@ -104,7 +104,7 @@
             </div>
                 <br>    
             <div>
-                <div class="divLeft w3-panel">
+                <div style="margin-left: 100px" class="w3-panel">
                 <h1>Merchandise</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM MERCHANDISE
