@@ -92,6 +92,7 @@
             <a href="aboutUs.html">About</a>
             <a href="aboutArtist.html">Artist</a>     
             <a href="staffLogin.html">Admin</a>
+            <a href="refund.jsp">Refund</a>
             <a class="book" href="bookingOrder.jsp">Book</a>
         </div>
         <div id="main">

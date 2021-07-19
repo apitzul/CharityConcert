@@ -42,6 +42,7 @@
             <a href="aboutArtist.html">Artist</a>
             <a href="contactUs.jsp">Contact</a>
             <a href="staffLogin.jsp">Admin</a>
+            <a href="refund.jsp">Refund</a>
         </div>
         
         <div id="main">
