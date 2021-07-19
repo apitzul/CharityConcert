@@ -90,7 +90,7 @@
                     <th>Total Price (RM)</th>
                     <th>Add Value (RM)</th>
                     <th>Final Price (RM)</th>
-                    <th>Booking Date (dd/mm/yyyy)</th>
+                    <th>Booking Date (yyyy/mm/dd)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
