@@ -128,7 +128,7 @@ and open the template in the editor.
                         </tbody> 
                     </table>
                     <p></p>
-                    <a class="input2" href="ticketview.html" target="_blank">Print Your Ticket</a><br>
+                    <a class="input2" href="ticketview.jsp" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
 
                 </div>

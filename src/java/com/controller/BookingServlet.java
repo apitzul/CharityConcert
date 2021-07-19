@@ -12,6 +12,7 @@ import com.dao.AreaDao;
 import com.dao.dataDB;
 import com.bean.MerchandiseBean;
 import com.dao.BookingDao;
+import com.dao.DonorDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -112,12 +113,12 @@ public class BookingServlet extends HttpServlet {
         //insert donor data
         donorBean.setDonorID(table.nextID("DONOR","DONOR_ID"));
         donorBean.setDonorName(fullName);
+        donorBean.setDonorGender(gender);
         donorBean.setDonorAge(Integer.parseInt(age));
         donorBean.setDonorEmail(email);
         donorBean.setDonorPhone(phoneNum);
-        
-        
-        
+        DonorDao donorDao=new DonorDao();
+        donorDao.insertDonor(donorBean);
 
         donorBean.toString();
         //update area data
