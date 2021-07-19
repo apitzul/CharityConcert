@@ -85,7 +85,7 @@ public class BookingServlet extends HttpServlet {
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
-       
+        //get all fieelds parameter
         System.out.println("FLAG INTO SERVLET");
         String fullName = request.getParameter("fullName");
         String age = request.getParameter("age");
@@ -99,25 +99,30 @@ public class BookingServlet extends HttpServlet {
         int blueTicket = Integer.parseInt(request.getParameter("blueTicket"));
 
         String merch = request.getParameter("merchandise");
+        System.out.println("Merch = "+merch);
+        
         String extra = request.getParameter("extdonation");
         
         double addValue = Double.parseDouble(extra);
         
-        
+        //bean declaration
         BookingBean bookingBean = new BookingBean(); 
         DonorBean donorBean = new DonorBean();
         MerchandiseBean merchBean = new MerchandiseBean();
         
         dataDB table= new dataDB();
-        
+        //insert donor data
         donorBean.setDonorID(table.nextID("DONOR","DONOR_ID"));
         donorBean.setDonorName(fullName);
         donorBean.setDonorAge(Integer.parseInt(age));
         donorBean.setDonorEmail(email);
         donorBean.setDonorPhone(phoneNum);
+        
+        
+        
 
         donorBean.toString();
-        
+        //update area data
         AreaDao areaDao=new AreaDao();
         
         AreaBean areaBeanY= new AreaBean();
@@ -146,11 +151,14 @@ public class BookingServlet extends HttpServlet {
  
         bookingBean.setBookingID(table.nextID("BOOKING","BOOKING_ID"));
         bookingBean.setDonorID(donorBean.getDonorID());
-        if(merch.equals("COMBO A"))
+       
+        
+        //update merch data
+        if(merch.equals("ComboA"))
             bookingBean.setMerchandiseID(1);
-        else if(merch.equals("COMBO B"))
+        else if(merch.equals("ComboB"))
             bookingBean.setMerchandiseID(2);
-        else if(merch.equals("COMBO C"))
+        else if(merch.equals("ComboC"))
             bookingBean.setMerchandiseID(3);
         else
             bookingBean.setMerchandiseID(0);
@@ -159,13 +167,20 @@ public class BookingServlet extends HttpServlet {
         
         
         ArrayList<AreaBean> areaList= (ArrayList<AreaBean>) areaDao.getAreaFromDB();
-
+        //final price calculation
         double finalPrice=0.0;    
-        
-            for(int i=0;i<areaList.size();i++){ 
-              AreaBean temp= (AreaBean)areaList.get(i);
-              finalPrice+=yellowTicket*temp.getAreaPrice();
-            }
+        AreaBean temp= new AreaBean();
+        temp= areaList.get(0);
+        finalPrice+=yellowTicket*temp.getAreaPrice();
+        System.out.println("FinalPrice = "+finalPrice);
+        temp= areaList.get(1);
+        finalPrice+=orangeTicket*temp.getAreaPrice();
+        System.out.println("FinalPrice = "+finalPrice);
+        temp= areaList.get(2);
+        finalPrice+=greenTicket*temp.getAreaPrice();
+        System.out.println("FinalPrice = "+finalPrice);
+        temp= areaList.get(3);
+        finalPrice+=blueTicket*temp.getAreaPrice();
 
         System.out.println("FinalPrice = "+finalPrice);
             
@@ -173,9 +188,20 @@ public class BookingServlet extends HttpServlet {
         bookingBean.setFinalPrice(finalPrice);
         bookingBean.setAddValue(addValue);
         bookingBean.setTotalPrice(bookingBean.getFinalPrice()+bookingBean.getAddValue());
-
-        BookingDao bookDao=new BookingDao();
+        
+        //inset booking
+         BookingDao bookDao=new BookingDao();
         String insertBooking = bookDao.insertBooking(bookingBean);
+
+        //insert booking area
+        if(yellowTicket!=0)
+        bookDao.insertBookingArea(bookingBean.getBookingID(),1,yellowTicket);
+        if(orangeTicket!=0)
+        bookDao.insertBookingArea(bookingBean.getBookingID(),1,orangeTicket);
+        if(greenTicket!=0)
+        bookDao.insertBookingArea(bookingBean.getBookingID(),1,greenTicket);
+        if(blueTicket!=0)
+        bookDao.insertBookingArea(bookingBean.getBookingID(),1,blueTicket);
         
         if(insertBooking.equals("SUCCESS")) 
          {

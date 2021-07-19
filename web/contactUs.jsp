@@ -112,7 +112,7 @@
                     <h1><b>Let's get in touch.<br>
                         Send me a message.</b></h1>
 
-                <form method = "post" action = "/CharityConcert/bookingOrder">
+                <form method = "post" action = "ContactServlet">
                     <p>  </p>
 
                         <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;

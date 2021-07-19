@@ -28,7 +28,7 @@ public class AreaDao {
     
     public ArrayList<AreaBean> getAreaFromDB(){
     
-        AreaBean areaBean=new AreaBean();
+       
         ArrayList<AreaBean> areaList=new ArrayList<AreaBean>();
 
         try {
@@ -37,9 +37,10 @@ public class AreaDao {
             resultSet = statement.executeQuery("Select * from AREA");
             while (resultSet.next())
             {
+                 AreaBean areaBean=new AreaBean();
                 String areaID = resultSet.getString("AREA_ID");
                 String areaName = resultSet.getString("AREA_NAME");
-                String areaCapacity = resultSet.getString("AREA_CAPICITY");
+                String areaCapacity = resultSet.getString("AREA_CAPACITY");
                 String areaStatus = resultSet.getString("AREA_STATUS");
                 String areaPrice = resultSet.getString("AREA_PRICE");
                 
@@ -89,7 +90,7 @@ public class AreaDao {
         
         con = DBconnection.createConnection();
         prepstatement = con
-                    .prepareStatement("update AREA set AREA_CAPICITY=?, AREA_STATUS=? where AREA_ID=?");
+                    .prepareStatement("update AREA set AREA_CAPACITY=?, AREA_STATUS=? where AREA_ID=?");
 
         prepstatement.setInt(1, capacity);
         prepstatement.setString(2, status);
