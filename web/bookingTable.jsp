@@ -76,21 +76,21 @@
                 <c:set var="finalPrice" value="${param.finalPrice}"/>
                 <c:set var="bookDate" value="${param.bookDate}"/>
 
-                <div class="divLeft w3-panel">
+                <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Booking</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM BOOKING
                 </sql:query>
                 <br>
-                <table class="w3-table w3-striped w3-white">
+                <table style="background-color: #32CD32;width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Booking Id</th>
                     <th>Donor Id</th>
                     <th>Merchandise Id</th>
-                    <th>Total Price</th>
-                    <th>Add Value</th>
-                    <th>Final Price</th>
-                    <th>Booking Date</th>
+                    <th>Total Price (RM)</th>
+                    <th>Add Value (RM)</th>
+                    <th>Final Price (RM)</th>
+                    <th>Booking Date (dd/mm/yyyy)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>

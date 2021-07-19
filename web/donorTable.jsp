@@ -75,13 +75,13 @@
                 <c:set var="donorEmail" value="${param.donorEmail}"/>
                 <c:set var="donorPhone" value="${param.donorPhone}"/>
 
-                <div class="divLeft w3-panel">
+                <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Donor</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM DONOR
                 </sql:query>
                 <br>
-                <table class="w3-table w3-striped w3-white">
+                <table style="background-color: #FFFF33;width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Donor Id</th>
                     <th>Donor Full Name</th>

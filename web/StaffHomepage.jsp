@@ -76,19 +76,19 @@
                 <c:set var="merchandiseType" value="${param.merchandiseType}"/>
                 <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
 
-                <div class="divLeft w3-panel">
+                <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Area</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM AREA
                 </sql:query>
                 <br>
-                <table class="w3-table w3-striped w3-white">
+                <table style="background-color: #818BC8; width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Area Id</th>
                     <th>Area Name</th>
                     <th>Area Capacity</th>
                     <th>Area Status</th>
-                    <th>Area Price</th>
+                    <th>Area Price (RM)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
@@ -110,11 +110,11 @@
                 SELECT * FROM MERCHANDISE
                 </sql:query>
                 <br>
-                <table class="w3-table w3-striped w3-white">
+                <table style="background-color: #B22222; width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Merchandise Id</th>
                     <th>Merchandise Type</th>
-                    <th>Merchandise Price</th>
+                    <th>Merchandise Price (RM)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
