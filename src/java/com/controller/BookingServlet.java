@@ -10,10 +10,8 @@ import com.bean.BookingBean;
 import com.bean.DonorBean;
 import com.dao.AreaDao;
 import com.dao.dataDB;
-import com.bean.LoginBean;
 import com.bean.MerchandiseBean;
 import com.dao.BookingDao;
-import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -190,10 +188,12 @@ public class BookingServlet extends HttpServlet {
         bookingBean.setTotalPrice(bookingBean.getFinalPrice()+bookingBean.getAddValue());
         
         //inset booking
-         BookingDao bookDao=new BookingDao();
+        BookingDao bookDao=new BookingDao();
         String insertBooking = bookDao.insertBooking(bookingBean);
 
         //insert booking area
+      
+        
         if(yellowTicket!=0)
         bookDao.insertBookingArea(bookingBean.getBookingID(),1,yellowTicket);
         if(orangeTicket!=0)
