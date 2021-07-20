@@ -6,12 +6,14 @@
 package com.dao;
 
 import com.bean.BookingBean;
+import com.bean.MerchandiseBean;
 import com.util.DBconnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -142,5 +144,56 @@ public class BookingDao {
             System.out.println("Error Message : " + ex.toString());
         }
         return "oops";
+    }
+    
+    public ArrayList<BookingBean> selectBooking() {
+        
+        ArrayList<BookingBean> bookList = new ArrayList<BookingBean>();
+        
+        
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        int bookingIDDB;
+        int donorIDDB;
+        int merchandiseIDDB;
+        double totalPriceDB;
+        double addValueDB;
+        double finalPriceDB;
+        String bookingDateDB;
+        String codeDB;
+        
+        try {
+            con = DBconnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("SELECT BOOKING_ID, DONOR_ID, MERCHANDISE_ID, TOTAL_PRICE, ADD_VALUE, FINAL_PRICE, BOOKING_DATE, CODE FROM BOOKING");
+            while (resultSet.next())
+            {
+                BookingBean bookingBean = new BookingBean();
+               
+                bookingIDDB = resultSet.getInt("BOOKING_ID");
+                donorIDDB = resultSet.getInt("DONOR_ID");
+                merchandiseIDDB = resultSet.getInt("MERCHANDISE_ID");
+                totalPriceDB = resultSet.getDouble("TOTAL_PRICE");
+                addValueDB = resultSet.getDouble("ADD_VALUE");
+                finalPriceDB = resultSet.getDouble("FINAL_PRICE");
+                bookingDateDB = resultSet.getString("BOOKING_DATE");
+                codeDB = resultSet.getString("CODE");
+                
+                bookingBean.setBookingID(bookingIDDB);
+                bookingBean.setDonorID(donorIDDB);
+                bookingBean.setMerchandiseID(merchandiseIDDB);
+                bookingBean.setTotalPrice(totalPriceDB);
+                bookingBean.setAddValue(addValueDB);
+                bookingBean.setFinalPrice(finalPriceDB);
+                bookingBean.setBookingDate(bookingDateDB);
+                bookingBean.setCode(codeDB);
+                
+                bookList.add(bookingBean);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bookList;
     }
 }
