@@ -1,3 +1,5 @@
+<%@page import="com.bean.DonorBean"%>
+<%@page import="com.bean.BookingBean"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -54,6 +56,16 @@ and open the template in the editor.
         <link rel="stylesheet" href="style.css">
         
     </head>
+    
+    <%
+       BookingBean bookingBean = (BookingBean) request.getAttribute("booking");
+       DonorBean donorBean = (DonorBean) request.getAttribute("donor");
+       int y = (Integer) request.getAttribute("ticketY");
+       int o = (Integer) request.getAttribute("ticketO");
+       int g = (Integer) request.getAttribute("ticketG");
+       int b = (Integer) request.getAttribute("ticketB");
+       
+    %>
     <body>
             <img class="background8" src="Image/background receipt.jpg">
             <div id="mySidenav" class="sidenav">
@@ -84,19 +96,19 @@ and open the template in the editor.
                 <tbody>
                     <tr>
                         <td><b>Full Name</b><br></td>
-                        <td>Muhammad Afiq Bin Zulkiffle<br></td>
+                        <td><%=donorBean.getDonorName()%><br></td>
                     </tr>
                     <tr>
                         <td><b>Gender</b><br></td>
-                        <td>Male<br></td>
+                        <td><%=donorBean.getDonorGender()%><br></td>
                     </tr>
                     <tr>    
                         <td><b>Age</b><br></td>
-                        <td>21<br></td>
+                        <td><%=donorBean.getDonorAge()%><br></td>
                     </tr>
                     <tr>
                         <td><b>Phone Number</b><br></td>
-                        <td>0173714641<br></td>
+                        <td><%=donorBean.getDonorPhone()%><br></td>
                     </tr>
                 </tbody> 
                 </table> 
@@ -105,32 +117,52 @@ and open the template in the editor.
                 <div class="divBackgroundGrey" >
                     <h2>Your Ticket</h2>
 
-
-
                     <table>
                         <tbody>
                             <tr>    
-                                <td><b>Number Of Ticket</b><br></td>
-                                <td><b></b>3<br></td>
-                            </tr>
-                            <tr>
-                                <td><b>Merchandise Details</b><br></td>
-                                <td><b></b>Combo A<br></td>
-                            </tr>
-                            <tr>
-                                <td><b>Ticket Price</b><br></td>
-                                <td><b></b>RM90 (x3 Ticket Area A)<br></td>
+                                <td><b style="color:yellow">Yellow Ticket </b><br></td>
+                                <td><b></b>RM150 x <%=y%> unit<br></td>
                             </tr>
                             <tr>    
+                                <td><b style="color:orange">Orange Ticket </b><br></td>
+                                <td><b></b>RM100 x <%=o%> unit<br></td>
+                            </tr>
+                            <tr>    
+                                <td><b style="color:greenyellow">Green Ticket </b><br></td>
+                                <td><b></b>RM75 x <%=g%> unit<br></td>
+                            </tr>
+                            <tr>    
+                                <td><b style="color:lightskyblue">Blue Ticket </b><br></td>
+                                <td><b></b>RM50 x <%=b%> unit<br></td>
+                            </tr>
+                            <tr>
+                                <td><b>Merchandise Details:</b><br></td>
+                                <%if(bookingBean.getMerchandiseID()==1){%>
+                                <td><b></b>Combo A<br></td>
+                                <%}else if(bookingBean.getMerchandiseID()==2){%>
+                                 <td><b></b>Combo B<br></td>
+                                <%}else if(bookingBean.getMerchandiseID()==3){%>
+                                 <td><b></b>Combo C<br></td>
+                                 <%}else{%>
+                                 <td><b></b>None<br></td>
+                                 <%}%>
+                            </tr>
+                            <tr>    
+                                <td><b>Donation</b><br></td>
+                                <td><b></b>RM <%=bookingBean.getAddValue()%><br></td>
+                            </tr>
+                            
+                            <tr>    
                                 <td><b>Total Price</b><br></td>
-                                <td><b></b>RM270<br></td>
+                                <td><b></b>RM <%=bookingBean.getTotalPrice()%><br></td>
                             </tr>
 
 
                         </tbody> 
                     </table>
                     <p></p>
-                    <a class="input2" href="ticketview.jsp" target="_blank">Print Your Ticket</a><br>
+                    
+                    <a class="input2" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
                 </div>
             </div>

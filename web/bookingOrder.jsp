@@ -133,24 +133,43 @@
                     </tr>
                     <tr>
                         <td style="background-color: #ffcc00"><b>Yellow</b><br></td>
-                        <td><b><%=availableY%></b><br></td>
                         
-                        <td><input class="input1" type = "number" name = "yellowTicket" min="0" max="<%=capY%>" required  style="width:75%"></td>
+                        <%if(availableY.equals("Not Available")){%>
+                        <td><b style="color:red"><%=availableY%></b><br></td>
+                        <%}else{%>
+                        <td><b><%=availableY%></b><br></td>   
+                        <%}%>
+                        
+                        <td><input class="input1" type = "number" name = "yellowTicket" value="0" min="0" max="<%=capY%>" required  style="width:75%"></td>
                     </tr>
                     <tr>    
                         <td style="background-color: #ff6600"><b>Orange</b><br></td>
-                        <td><b><%=availableO%></b><br></td>
-                        <td><input class="input1" type = "number" name = "orangeTicket" min="0" max="<%=capO%>" required style="width:75%"></td>
+                        <%if(availableO.equals("Not Available")){%>
+                        <td><b style="color:red"><%=availableO%></b><br></td>
+                        <%}else{%>
+                        <td><b><%=availableO%></b><br></td>   
+                        <%}%>
+                        <td><input class="input1" type = "number" name = "orangeTicket" value="0" min="0" max="<%=capO%>" required style="width:75%"></td>
                     </tr>
                     <tr>
                         <td style="background-color: #00802b"><b>Green</b><br></td>
-                        <td><b><%=availableG%></b><br></td>
-                        <td><input class="input1" type = "number" name = "greenTicket" min="0" max="<%=capG%>" required style="width:75%" ></td>
+                        <%if(availableG.equals("Not Available")){%>
+                        <td><b style="color:red"><%=availableG%></b><br></td>
+                        <%}else{%>
+                        <td><b><%=availableG%></b><br></td>   
+                        <%}%>
+                        <td><input class="input1" type = "number" name = "greenTicket" value="0" min="0" max="<%=capG%>" required style="width:75%" ></td>
                     </tr>
                     <tr>
                         <td style="background-color: #000066"><b>Blue</b><br></td>
-                        <td><b><%=availableB%></b><br></td>
-                        <td><input class="input1" type = "number" name = "blueTicket" min="0" max="<%=capB%>" required style="width:75%"></td>
+                        
+                        <%if(availableB.equals("Not Available")){%>
+                        <td><b style="color:red"><%=availableB%></b><br></td>
+                        <%}else{%>
+                        <td><b><%=availableB%></b><br></td>   
+                        <%}%>
+                        
+                        <td><input class="input1" type = "number" name = "blueTicket" value="0" min="0" max="<%=capB%>" required style="width:75%"></td>
                     </tr>
                     </tbody> 
                 </table>

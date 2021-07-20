@@ -208,7 +208,13 @@ public class BookingServlet extends HttpServlet {
         
         if(insertBooking.equals("SUCCESS")) 
          {
-             System.out.println("FLAG SUCCESS INSERT BOOKING");             
+             System.out.println("FLAG SUCCESS INSERT BOOKING");  
+             request.setAttribute("booking",bookingBean);
+             request.setAttribute("donor",donorBean);
+             request.setAttribute("ticketY",yellowTicket);
+             request.setAttribute("ticketO",orangeTicket);
+             request.setAttribute("ticketG",greenTicket);
+             request.setAttribute("ticketB",blueTicket);            
              request.getRequestDispatcher("/receiptOrder.jsp").forward(request, response);
          }
          else

@@ -1,3 +1,5 @@
+<%@page import="com.bean.DonorBean"%>
+<%@page import="com.bean.BookingBean"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -25,10 +27,11 @@ and open the template in the editor.
                 margin-top: 0px;
                 width:161px;
                 background-color: white; 
+                display:flex;
             }
             .ticketDetails{
                 color: black;
-                font-size: 13px;
+                font-size: 12px;
                 margin-left: 13px;
             }
             .ticketCode{
@@ -44,6 +47,11 @@ and open the template in the editor.
             left: 117px;
             display:flex;
             }
+            .box{
+                display:flex;
+               heigth:25%;
+               width: 25%;
+            }
             
         </style>
         <title>TICKET DOWNLOAD</title>
@@ -52,20 +60,64 @@ and open the template in the editor.
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <%
+       
+       String y = request.getParameter("y");
+       String o =request.getParameter("o");
+       String g =request.getParameter("g");
+       String b = request.getParameter("b");
+       String merch = request.getParameter("merch");
+       String code = request.getParameter("code");
+    %>
         <div class="container1">
             <img src="Image/ticket.png" >
                 <div class="top-left">
-                    <div class="ticketArea" style="background-color: yellow">
+                    <div class="ticketArea">
+                        <%if(!y.equals("0")){%>
+                        <div class="box" style="background-color: yellow"></div>
+                        <%}else{%>
+                        <div class="box" style="background-color: white"></div>
+                        <%}%>
                         
+                        <%if(!o.equals("0")){%>
+                        <div class="box" style="background-color: orange"></div>
+                        <%}else{%>
+                        <div class="box" style="background-color: white"></div>
+                        <%}%>
+                        
+                        <%if(!g.equals("0")){%>
+                        <div class="box" style="background-color: greenyellow"></div>
+                        <%}else{%>
+                        <div class="box" style="background-color: white"></div>
+                        <%}%>
+                        
+                        <%if(!b.equals("0")){%>
+                        <div class="box" style="background-color: lightskyblue"></div>
+                        <%}else{%>
+                        <div class="box" style="background-color: white"></div>
+                        <%}%>
                     </div>
                     <div class="ticketDetails">
-                        Area Yellow : <br/><b>x3 Ticket</b><br/><br/>
-                        Merchandise : <br/><b>Combo A</b><br/>
+                        Area Yellow : <b><%=y%></b><br/>
+                        Area Orange : <b><%=o%></b><br/>
+                        Area Green  : <b><%=g%></b><br/>
+                        Area Blue   : <b><%=b%></b><br/>
+                        <%if(merch.equals("1")){%>
+                        Merchandise : <br><b>Combo A</b>
+                        <%}else if(merch.equals("2")){%>
+                        Merchandise : <br><b>Combo B</b>
+                        <%}else if(merch.equals("3")){%>
+                        Merchandise : <br><b>Combo C</b>
+                         <%}else{%>
+                        Merchandise : <br><b>None</b>
+                         <%}%>
+                       
+                        
                     </div>
                     
                 </div>
                 <div class="bottom-left ticketCode">
-                           Code: adiahodnso
+                           Code: <b><%=code%></b>
                 </div>
          </div>
 
