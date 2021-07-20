@@ -1,3 +1,6 @@
+<%@page import="com.bean.BookingBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.dao.BookingDao"%>
 <!--bookingOrder.html-->
 <%@page import="com.controller.BookingServlet" %>
 <html>
@@ -72,9 +75,16 @@
                 <h1>Refunds</h1>
                 <input list="bookId" type="text" name="booking_Id" placeholder="Enter Your Booking ID.">
                 <datalist id="bookId">
-                    <option value="1">Muhd Afiq</option>
-                    <option value="2">Muhd Azim</option>
-                    <option value="3">Muhd Amirul</option>
+                    <%
+                    BookingDao bookDao=new BookingDao();
+                    ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();
+                    bookList=bookDao.selectBooking();
+                    
+                     for(int i=0;i<bookList.size();i++){
+                         BookingBean temp=(BookingBean) bookList.get(i); 
+                         String name="";
+                    %>
+                    <option value="<%=temp.getBookingID()%>"></option><%}%>
                 </datalist>
                 <p><input type="text" name="code" placeholder="Enter Code on Your Ticket."></p>
                 <p></p>
