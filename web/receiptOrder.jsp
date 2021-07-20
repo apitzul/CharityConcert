@@ -157,12 +157,11 @@ and open the template in the editor.
                                 <td><b></b>RM <%=bookingBean.getTotalPrice()%><br></td>
                             </tr>
 
-
                         </tbody> 
                     </table>
                     <p></p>
                     
-                    <a class="input2" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>" target="_blank">Print Your Ticket</a><br>
+                    <a class="book" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
                 </div>
             </div>
@@ -171,10 +170,10 @@ and open the template in the editor.
                 <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
                 <p class="note">*You may save or print the full receipt</p>
                 <br><br>
-                <a class="input2" href="homepage.html" >Finish Payment</a>        
+                <a class="input2" href="homepage.html" >Finish Payment</a>
             </div>    
         </div>
-            
+
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {
