@@ -9,6 +9,7 @@ import com.bean.ContactBean;
 import com.bean.LoginBean;
 import com.dao.ContactDao;
 import com.dao.LoginDao;
+import com.dao.dataDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -75,17 +76,19 @@ public class ContactServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
         System.out.println("FLAG INTO SERVLET");
-        String contactName = request.getParameter("contactName");
-        String contactEmail = request.getParameter("contactEmail");
-        String contactSubject = request.getParameter("contactSubject");
-        String contactMessage = request.getParameter("contactMessage");
+        String contactName = request.getParameter("fullName");
+        String contactEmail = request.getParameter("email");
+        String contactSubject = request.getParameter("subject");
+        String contactMessage = request.getParameter("message");
  
+        dataDB table=new dataDB();
  
         ContactBean contactBean = new ContactBean(); 
  
+        contactBean.setContactId(table.nextID("CONTACT", "CONTACT_ID"));
         contactBean.setContactName(contactName); 
         contactBean.setContactEmail(contactEmail); 
-        contactBean.setContactMessage(contactMessage); 
+        contactBean.setContactSubject(contactSubject); 
         contactBean.setContactMessage(contactMessage); 
  
         
@@ -96,12 +99,12 @@ public class ContactServlet extends HttpServlet {
         if(userValidate.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS");
-             request.getRequestDispatcher("/index.html").forward(request, response);
+             request.getRequestDispatcher("/contactUs.jsp").forward(request, response);
          }
          else
          {
              System.out.println("FLAG FAIL");
-             request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
+             request.getRequestDispatcher("/contactUs.jsp").forward(request, response);
          }
         
     }
