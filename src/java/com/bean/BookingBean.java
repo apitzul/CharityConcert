@@ -18,11 +18,12 @@ public class BookingBean implements java.io.Serializable {
     private double addValue;
     private double finalPrice;
     private String bookingDate;
+    private String code;
 
     public BookingBean() {
     }
 
-    public BookingBean(int bookingID, int donorID, int merchandiseID, double totalPrice, double addValue, double finalPrice, String bookingDate) {
+    public BookingBean(int bookingID, int donorID, int merchandiseID, double totalPrice, double addValue, double finalPrice, String bookingDate,String code) {
         this.bookingID = bookingID;
         this.donorID = donorID;
         this.merchandiseID = merchandiseID;
@@ -30,8 +31,17 @@ public class BookingBean implements java.io.Serializable {
         this.addValue = addValue;
         this.finalPrice = finalPrice;
         this.bookingDate = bookingDate;
+        this.code=code;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+    
     public int getBookingID() {
         return bookingID;
     }

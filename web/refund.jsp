@@ -58,7 +58,7 @@
         </div>
         
         <div id="main">
-        <form name="form" action="BookingServlet" method="POST">
+        <form name="form" action="RefundServlet" method="POST">
         <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             

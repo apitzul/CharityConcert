@@ -31,7 +31,19 @@ and open the template in the editor.
                 font-size: 13px;
                 margin-left: 13px;
             }
-            
+            .ticketCode{
+                color: black;
+                font-size: 13px;
+                
+                
+            }
+            .bottom-left {
+            position: absolute;
+          
+            top: 553px;
+            left: 117px;
+            display:flex;
+            }
             
         </style>
         <title>TICKET DOWNLOAD</title>
@@ -50,7 +62,12 @@ and open the template in the editor.
                         Area Yellow : <br/><b>x3 Ticket</b><br/><br/>
                         Merchandise : <br/><b>Combo A</b><br/>
                     </div>
+                    
                 </div>
-        </div>
+                <div class="bottom-left ticketCode">
+                           Code: adiahodnso
+                </div>
+         </div>
+
     </body>
 </html>

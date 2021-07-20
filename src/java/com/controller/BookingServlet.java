@@ -15,6 +15,7 @@ import com.dao.BookingDao;
 import com.dao.DonorDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
@@ -182,12 +183,14 @@ public class BookingServlet extends HttpServlet {
         finalPrice+=blueTicket*temp.getAreaPrice();
 
         System.out.println("FinalPrice = "+finalPrice);
-            
+        //set all bookingbean data    
         bookingBean.setBookingDate(java.time.LocalDate.now().toString());
         bookingBean.setFinalPrice(finalPrice);
         bookingBean.setAddValue(addValue);
         bookingBean.setTotalPrice(bookingBean.getFinalPrice()+bookingBean.getAddValue());
         
+        dataDB data=new dataDB();
+        bookingBean.setCode(data.generateRandomString(10));
         //inset booking
         BookingDao bookDao=new BookingDao();
         String insertBooking = bookDao.insertBooking(bookingBean);
@@ -216,6 +219,8 @@ public class BookingServlet extends HttpServlet {
          }
         
     }
+        
+
     /**
      * Returns a short description of the servlet.
      *

@@ -34,11 +34,12 @@ public class BookingDao {
         double addValue= bookingBean.getAddValue();
         double finalPrice= bookingBean.getFinalPrice();
         String bookingDate= bookingBean.getBookingDate();
+        String code= bookingBean.getCode();
        
         try
          {
             con = DBconnection.createConnection(); //Fetch database connection object
-            String query = "INSERT INTO BOOKING(BOOKING_ID,DONOR_ID,MERCHANDISE_ID,BOOKING_DATE,ADD_VALUE,FINAL_PRICE,TOTAL_PRICE) VALUES(?,?,?,?,?,?,?)";
+            String query = "INSERT INTO BOOKING(BOOKING_ID,DONOR_ID,MERCHANDISE_ID,BOOKING_DATE,ADD_VALUE,FINAL_PRICE,TOTAL_PRICE,CODE) VALUES(?,?,?,?,?,?,?,?)";
             pstmt = con.prepareStatement(query);
             
             pstmt.setInt(1, bookingID);
@@ -48,6 +49,7 @@ public class BookingDao {
             pstmt.setDouble(5, addValue);
             pstmt.setDouble(6, finalPrice);
             pstmt.setDouble(7, totalPrice);
+            pstmt.setString(8, code);
             
             int R = pstmt.executeUpdate();
             if(R!=0) {
@@ -114,11 +116,12 @@ public class BookingDao {
         double addValue= bookingBean.getAddValue();
         double finalPrice= bookingBean.getFinalPrice();
         String bookingDate= bookingBean.getBookingDate();
+        String code= bookingBean.getCode();
        
         try
          {
             con = DBconnection.createConnection(); //Fetch database connection object
-            String query = "INSERT INTO REFUND(BOOKING_ID,DONOR_ID,MERCHANDISE_ID,BOOKING_DATE,ADD_VALUE,FINAL_PRICE,TOTAL_PRICE) VALUES(?,?,?,?,?,?,?)";
+            String query = "INSERT INTO REFUND(BOOKING_ID,DONOR_ID,MERCHANDISE_ID,BOOKING_DATE,ADD_VALUE,FINAL_PRICE,TOTAL_PRICE,CODE) VALUES(?,?,?,?,?,?,?,?)";
             pstmt = con.prepareStatement(query);
             
             pstmt.setInt(1, bookingID);
@@ -128,6 +131,7 @@ public class BookingDao {
             pstmt.setDouble(5, addValue);
             pstmt.setDouble(6, finalPrice);
             pstmt.setDouble(7, totalPrice);
+            pstmt.setString(8, code);
             
             int R = pstmt.executeUpdate();
             if(R!=0) {
