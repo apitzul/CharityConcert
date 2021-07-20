@@ -54,6 +54,7 @@
             <a href="StaffHomepage.jsp">Admin Home</a>
             <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
             <a href="donorTable.jsp">Donor Table</a>
+            <a href="refundTable.jsp">Refund Table</a>
             <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
         </div>
         
@@ -75,6 +76,7 @@
                 <c:set var="addPrice" value="${param.addPrice}"/>
                 <c:set var="finalPrice" value="${param.finalPrice}"/>
                 <c:set var="bookDate" value="${param.bookDate}"/>
+                <c:set var="code" value="${param.code}"/>
 
                 <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Booking</h1>
@@ -82,7 +84,7 @@
                 SELECT * FROM BOOKING
                 </sql:query>
                 <br>
-                <table style="background-color: #57fa57; width:80%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #57fa57; width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Booking Id</th>
                     <th>Donor Id</th>
@@ -91,6 +93,7 @@
                     <th>Add Value (RM)</th>
                     <th>Total Price (RM)</th>
                     <th>Booking Date (yyyy/mm/dd)</th>
+                    <th>Code</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
@@ -101,6 +104,7 @@
                     <td><c:out value="${row.ADD_VALUE}"/></td>
                     <td><c:out value="${row.TOTAL_PRICE}"/></td>
                     <td><c:out value="${row.BOOKING_DATE}"/></td>
+                    <td><c:out value="${row.CODE}"/></td>
                 </tr>
                 </c:forEach>
                 </table>

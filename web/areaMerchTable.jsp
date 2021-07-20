@@ -83,7 +83,7 @@
                 SELECT * FROM AREA
                 </sql:query>
                 <br>
-                <table style="background-color: #818BC8; width:80%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #818BC8; width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Area Id</th>
                     <th>Name</th>

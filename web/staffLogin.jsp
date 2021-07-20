@@ -49,7 +49,7 @@
             <a href="aboutArtist.html">Artist</a>
             <a href="contactUs.jsp">Contact</a>
             <a href="refund.jsp">Refund</a>
-            <a class="book" href="bookingOrder.jsp">Book</a>
+            <a class="w3-text-blue" href="bookingOrder.jsp"><b>Book</b></a>
          </div>
         
         <div id="main">
