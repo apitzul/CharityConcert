@@ -5,16 +5,15 @@
  */
 package com.controller;
 
-import com.bean.LoginBean;
+import com.bean.BookingBean;
 import com.dao.BookingDao;
-import com.dao.LoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -77,24 +76,35 @@ public class RefundServlet extends HttpServlet {
         
         System.out.println("FLAG INTO SERVLET");
         
-        String bookId = request.getParameter("booking_id");
-        
-        
- 
+        int bookId = Integer.parseInt(request.getParameter("booking_Id"));
+        String code = request.getParameter("code");
+        String validateRefund = "FAIL"; 
         BookingDao bookDao= new BookingDao();
+        
+        ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();
+        
+        bookList=bookDao.selectBooking();
 
-        String userValidate = ""; 
+        for(int i=0;i<bookList.size();i++){
+            BookingBean temp=(BookingBean) bookList.get(i);
+            
+            if((temp.getBookingID()==bookId)&&(temp.getCode().equals(code))){
+                validateRefund = bookDao.insertRefund(temp);
+                bookDao.deleteRefundBook(bookId);
+                break;
+            } 
+        }
  
-        if(userValidate.equals("SUCCESS")) 
+        if(validateRefund.equals("SUCCESS")) 
          {
-             System.out.println("FLAG SUCCESS TO LOGIN");
-             request.getRequestDispatcher("/StaffHomepage.jsp").forward(request, response);
+             System.out.println("FLAG SUCCESS TO REFUND");
+             request.getRequestDispatcher("/refund.jsp").forward(request, response);
          }
          else
          {
-             System.out.println("FLAG FAIL TO LOGIN");
-             request.setAttribute("errMessage", userValidate); 
-             request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
+             System.out.println("FLAG FAIL TO REFUND");
+             request.setAttribute("errMessage", validateRefund); 
+             request.getRequestDispatcher("/refund.jsp").forward(request, response);
          }
     }
 

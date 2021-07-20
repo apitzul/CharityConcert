@@ -26,7 +26,7 @@ public class ContactDao {
     PreparedStatement pstmt=null;
     
     public String insertMessageToDB(ContactBean contact){
-        
+        int id=contact.getContactId();
         String fullname= contact.getContactName();
         String email = contact.getContactEmail();
         String subject=contact.getContactSubject();
@@ -35,13 +35,13 @@ public class ContactDao {
         try
          {
             con = DBconnection.createConnection(); //Fetch database connection object
-            String query = "INSERT INTO CONTACT(FULLNAME,EMAIL,SUBJECT,MESSAGE) VALUES(?,?,?,?)";
+            String query = "INSERT INTO CONTACT(CONTACT_ID,FULLNAME,EMAIL,SUBJECT,MESSAGE) VALUES(?,?,?,?,?)";
             pstmt = con.prepareStatement(query);
-            
-            pstmt.setString(1, fullname);
-            pstmt.setString(2, email);
-            pstmt.setString(3, subject);
-            pstmt.setString(4, message);
+            pstmt.setInt(1, id);
+            pstmt.setString(2, fullname);
+            pstmt.setString(3, email);
+            pstmt.setString(4, subject);
+            pstmt.setString(5, message);
 
             
             int R = pstmt.executeUpdate();
