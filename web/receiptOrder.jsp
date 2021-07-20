@@ -55,23 +55,25 @@ and open the template in the editor.
         
     </head>
     <body>
-        <div>
             <img class="background8" src="Image/background receipt.jpg">
-            <div class="span">           
-                <div>
-                    <img src="Image/logo white.png" class="icon">
-                    <img src="Image/x colab.png" class="icon2">
-                    <img src="Image/caliph buskers logo.png" class="icon">
-                </div>
-                <div class="divRight">
-                <ul>               
-                    <li class="navigation"><a href="aboutArtist.html">About Artist</a></li>
-                    <li class="navigation"><a href="aboutUs.html">About Us</a></li>
-                    <li class="navigation"><a href="contactUs.jsp">Contact Us</a></li>
-                    <li class="navigation"><a class="book" href="bookingOrder.jsp">Book here</a></li>
-                </ul>  
-                </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="homepage.html">Home</a>
+                <a href="aboutUs.html">About</a>
+                <a href="aboutArtist.html">Artist</a>
+                <a href="contactUs.jsp">Contact</a>
+                <a href="staffLogin.jsp">Admin</a>
+                <a href="refund.jsp">Refund</a>
             </div>
+        
+            <div id="main">
+                <div class="span">           
+                <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
+                <div>             
+                    <img src="Image/logo white.png" class="icon">
+                    <img src="Image/caliph buskers logo.png" class="icon">
+                </div>    
+                </div>
             <div class="divPadding">
                 <h1>Ticket Booking Details</h1>
             </div>
@@ -130,12 +132,8 @@ and open the template in the editor.
                     <p></p>
                     <a class="input2" href="ticketview.jsp" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
-
                 </div>
-
             </div>
-
-
             <div class="divPadding">
                 <h1>Thank You !!<br></h1>
                 <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
@@ -144,6 +142,5 @@ and open the template in the editor.
                 <a class="input2" href="homepage.html" >Finish Payment</a>        
             </div>    
         </div>
-        
     </body>
 </html>

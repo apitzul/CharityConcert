@@ -89,9 +89,9 @@
                     <div class="w3-container w3-blue w3-padding-16">
                         <div class="w3-left"><i class="fa fa-ticket w3-xxxlarge"></i></div>
                         <div class="w3-clear"></div>
-                        <h3>Total Seats Booked</h3>
+                        <h3>Number of Seats Booked</h3>
+                        <h5 class="w3-right">Units</h5>
                         <h1 class="w3-right">52</h1>
-                        <h5 class="w3-right">RM</h5>
                         <div class="w3-clear"></div>
                     </div>
                 </div>
