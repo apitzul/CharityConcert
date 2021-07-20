@@ -98,4 +98,24 @@ public class AreaDao {
         prepstatement.executeUpdate();
         
     }
+    
+    public int getTotalSeat() {
+        
+        int numSeat=0;
+
+        try {
+            con = DBconnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("SELECT SUM(AREA_CAPACITY)AS TOTAL FROM AREA");
+            while (resultSet.next())
+            {
+
+                numSeat = resultSet.getInt("TOTAL");
+                return numSeat;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return numSeat;
+    }
 }

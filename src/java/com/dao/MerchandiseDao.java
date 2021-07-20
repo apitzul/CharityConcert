@@ -8,6 +8,7 @@ package com.dao;
 import com.bean.MerchandiseBean;
 import com.util.DBconnection;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,14 +20,17 @@ import java.util.ArrayList;
  */
 public class MerchandiseDao {
     
+    PreparedStatement prepstatement =null;
+    Connection con = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+    PreparedStatement pstmt=null;
+    
     public ArrayList<MerchandiseBean> selectMerchandise() {
         
         ArrayList<MerchandiseBean> merchList = new ArrayList<MerchandiseBean>();
         
         
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
         int merchandiseIDDB = 0;
         String merchandiseTypeDB = "";
         double merchandisePriceDB = 0.0;
@@ -55,4 +59,25 @@ public class MerchandiseDao {
         return merchList;
     }
     
+     public double getTotalMerch() {
+        
+        double totalMerchDB=0.0;
+
+        try {
+            con = DBconnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("SELECT SUM(MERCHANDISE.MERCHANDISE_PRICE)AS TOTAL\n" +
+                                                "FROM BOOKING\n" +
+                                                "INNER JOIN MERCHANDISE\n" +
+                                                "ON BOOKING.MERCHANDISE_ID = MERCHANDISE.MERCHANDISE_ID");
+            while (resultSet.next())
+            {
+                totalMerchDB = resultSet.getDouble("TOTAL");
+                return totalMerchDB;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return totalMerchDB;
+    }
 }

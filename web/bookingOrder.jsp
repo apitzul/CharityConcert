@@ -1,3 +1,7 @@
+<%@page import="com.dao.AreaDao"%>
+<%@page import="com.bean.AreaBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
 <!--bookingOrder.html-->
 <%@page import="com.controller.BookingServlet" %>
 <html>
@@ -71,16 +75,16 @@
             <div class="containerleft">
                 <h1><b>Book Your Ticket Here.</b></h1>
                 <p>  </p>
-                <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
-                <select style="width:25%" size="1" name="gender">
+                <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
+                <select style="width:25%" size="1" name="gender" required>
                     <option value="NoGender">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female
                     </option>
                 </select>&nbsp;
-                <input class="input1" type ="text" name ="age" size="31" placeholder="Age">&nbsp;
-                <input class="input1" type ="text" name ="pNumber" size="49" placeholder="Phone Number">&nbsp;  
-                <input class="input1" type ="text" name ="email" size="49" placeholder="Email">&nbsp; 
+                <input class="input1" type ="text" name ="age" size="31" placeholder="Age" required>&nbsp;
+                <input class="input1" type ="text" name ="pNumber" size="49" placeholder="Phone Number" required>&nbsp;  
+                <input class="input1" type ="text" name ="email" size="49" placeholder="Email" required>&nbsp; 
                 
                 <p class="noteGrey">
                 Scroll Down
@@ -94,7 +98,30 @@
         </div>
         
         
-        
+        <%
+            ArrayList<AreaBean> areaList=new ArrayList<AreaBean>();
+            AreaDao areaDao = new AreaDao();
+                
+            areaList=areaDao.getAreaFromDB();
+            
+             AreaBean temp=new  AreaBean() ;
+            temp=(AreaBean) areaList.get(0);
+            String availableY=temp.getAreaStatus();
+            int capY=150-temp.getAreaCapacity();
+            
+            temp=(AreaBean) areaList.get(1);
+            String availableO=temp.getAreaStatus();
+            int capO=150-temp.getAreaCapacity();
+            
+            temp=(AreaBean) areaList.get(2);
+            String availableG=temp.getAreaStatus();
+            int capG=150-temp.getAreaCapacity();
+            
+            temp=(AreaBean) areaList.get(3);
+            String availableB=temp.getAreaStatus();
+            int capB=150-temp.getAreaCapacity();
+            
+        %>
         <div class="background2">
             <div class="containerleft">
                 <table cellspacing="10" cellpadding="10" >
@@ -106,29 +133,30 @@
                     </tr>
                     <tr>
                         <td style="background-color: #ffcc00"><b>Yellow</b><br></td>
-                        <td><b>Available</b><br></td>
-                        <td><input class="input1" type = "text" name = "yellowTicket" size="10" placeholder="0/150" ></td>
+                        <td><b><%=availableY%></b><br></td>
+                        
+                        <td><input class="input1" type = "number" name = "yellowTicket" min="0" max="<%=capY%>" required  style="width:75%"></td>
                     </tr>
                     <tr>    
                         <td style="background-color: #ff6600"><b>Orange</b><br></td>
-                        <td><b>Fully Booked</b><br></td>
-                        <td><input class="input1" type = "text" name = "orangeTicket" size="10" placeholder="150/150" ></td>
+                        <td><b><%=availableO%></b><br></td>
+                        <td><input class="input1" type = "number" name = "orangeTicket" min="0" max="<%=capO%>" required style="width:75%"></td>
                     </tr>
                     <tr>
                         <td style="background-color: #00802b"><b>Green</b><br></td>
-                        <td><b>Available</b><br></td>
-                        <td><input class="input1" type = "text" name = "greenTicket" size="10" placeholder="0/150" ></td>
+                        <td><b><%=availableG%></b><br></td>
+                        <td><input class="input1" type = "number" name = "greenTicket" min="0" max="<%=capG%>" required style="width:75%" ></td>
                     </tr>
                     <tr>
                         <td style="background-color: #000066"><b>Blue</b><br></td>
-                        <td><b>Available</b><br></td>
-                        <td><input class="input1" type = "text" name = "blueTicket" size="20" placeholder="0/150" ></td>
+                        <td><b><%=availableB%></b><br></td>
+                        <td><input class="input1" type = "number" name = "blueTicket" min="0" max="<%=capB%>" required style="width:75%"></td>
                     </tr>
                     </tbody> 
                 </table>
                 <p style="padding: 20px; "></p>
 
-                <select size="1" name="merchandise">
+                <select size="1" name="merchandise" required>
                     <option value="NoMerchandise">Select Merchandise Combo</option>
                     <option value="ComboN">None</option>
                     <option value="ComboA">Combo A</option>
@@ -136,7 +164,7 @@
                     <option value="ComboC">Combo C</option>
                 </select>&nbsp;
                 
-                    <input class="input1" type ="text" name ="extdonation" size="8" placeholder="Extra Donation (RM)">&nbsp;
+                    <input class="input1" type ="text" name ="extdonation" size="8" placeholder="Extra Donation (RM)" required>&nbsp;
                    
                 <div>
                     <input class="input2" type="submit" value="Checkout">

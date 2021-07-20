@@ -60,11 +60,10 @@ public class DonorDao {
         return "oops";
     }
     
-    public ArrayList<DonorBean> selectDonor() {
+    public DonorBean selectDonor(int id) {
         
-        ArrayList<DonorBean> donList = new ArrayList<DonorBean>();
-        
-        
+        DonorBean donorBean = new DonorBean();
+
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -78,11 +77,10 @@ public class DonorDao {
         try {
             con = DBconnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("SELECT DONOR_ID, DONOR_FULL_NAME, DONOR_GENDER, DONOR_AGE, DONOR_EMAIL, DONOR_PHONE_NUMBER FROM DONOR");
+            resultSet = statement.executeQuery("SELECT DONOR_ID, DONOR_FULL_NAME, DONOR_GENDER, DONOR_AGE, DONOR_EMAIL, DONOR_PHONE_NUMBER FROM DONOR WHERE DONOR_ID="+id);
             while (resultSet.next())
             {
-                DonorBean donorBean = new DonorBean();
-               
+
                 donorIDDB = resultSet.getInt("DONOR_ID");
                 donorNameDB = resultSet.getString("DONOR_FULL_NAME");
                 donorGenderDB = resultSet.getString("DONOR_GENDER");
@@ -97,12 +95,12 @@ public class DonorDao {
                 donorBean.setDonorEmail(donorEmailDB);
                 donorBean.setDonorPhone(donorPhoneDB);
                 
-                donList.add(donorBean);
             }
+            return donorBean;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return donList;
+        return donorBean;
     }
 }
     

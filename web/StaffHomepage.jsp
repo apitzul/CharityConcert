@@ -1,3 +1,6 @@
+<%@page import="com.dao.AreaDao"%>
+<%@page import="com.dao.MerchandiseDao"%>
+<%@page import="com.dao.BookingDao"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -85,13 +88,21 @@
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM AREA
                 </sql:query>
+                <%
+                    BookingDao bookDao=new BookingDao();
+                    MerchandiseDao merchDao = new MerchandiseDao();
+                    AreaDao areaDao=new AreaDao();
+                %>
+                <c:set var="totalDonation" value="<%=bookDao.getTotalDonation()%>"/>
+                <c:set var="totalMerch" value="<%=merchDao.getTotalMerch()%>"/>
+                <c:set var="totalSeat" value="<%=areaDao.getTotalSeat()%>"/>
                 <div class="w3-quarter">
                     <div class="w3-container w3-blue w3-padding-16">
                         <div class="w3-left"><i class="fa fa-ticket w3-xxxlarge"></i></div>
                         <div class="w3-clear"></div>
                         <h3>Number of Seats Booked</h3>
                         <h5 class="w3-right">Units</h5>
-                        <h1 class="w3-right">52</h1>
+                        <h1 class="w3-right">${totalSeat}</h1>
                         <div class="w3-clear"></div>
                     </div>
                 </div>
@@ -100,7 +111,7 @@
                         <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
                         <div class="w3-clear"></div>
                         <h3>Total Donation</h3>
-                        <h1 class="w3-right">66</h1>
+                        <h1 class="w3-right">${totalDonation}</h1>
                         <h5 class="w3-right">RM</h5>
                         <div class="w3-clear"></div>
                     </div>
@@ -110,7 +121,7 @@
                         <div class="w3-left"><i class="fa fa-shopping-bag w3-xxxlarge"></i></div>
                         <div class="w3-clear"></div>
                         <h3>Total Merchandise Sold</h3>
-                        <h1 class="w3-right">99</h1>
+                        <h1 class="w3-right">${totalMerch}</h1>
                         <h5 class="w3-right">RM</h5>
                         <div class="w3-clear"></div>
                     </div>

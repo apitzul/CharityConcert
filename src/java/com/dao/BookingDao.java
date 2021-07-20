@@ -196,4 +196,26 @@ public class BookingDao {
         }
         return bookList;
     }
+    
+    public double getTotalDonation() {
+        
+        double totalPriceDB=0.0;
+
+        try {
+            con = DBconnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("SELECT SUM(TOTAL_PRICE)AS TOTAL FROM BOOKING");
+            while (resultSet.next())
+            {
+                BookingBean bookingBean = new BookingBean();
+                
+                totalPriceDB = resultSet.getDouble("TOTAL");
+                return totalPriceDB;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return totalPriceDB;
+    }
+    
 }

@@ -1,3 +1,5 @@
+<%@page import="com.bean.DonorBean"%>
+<%@page import="com.dao.DonorDao"%>
 <%@page import="com.bean.BookingBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.dao.BookingDao"%>
@@ -77,14 +79,16 @@
                 <datalist id="bookId">
                     <%
                     BookingDao bookDao=new BookingDao();
+                    DonorDao donorDao=new DonorDao();
+                    
                     ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();
                     bookList=bookDao.selectBooking();
-                    
+                    System.out.print(bookList.toString());
                      for(int i=0;i<bookList.size();i++){
                          BookingBean temp=(BookingBean) bookList.get(i); 
-                         String name="";
+                         DonorBean donor=donorDao.selectDonor(temp.getDonorID());
                     %>
-                    <option value="<%=temp.getBookingID()%>"></option><%}%>
+                    <option value="<%=temp.getBookingID()%>"><%=donor.getDonorName()%></option><%}%>
                 </datalist>
                 <p><input type="text" name="code" placeholder="Enter Code on Your Ticket."></p>
                 <p></p>
