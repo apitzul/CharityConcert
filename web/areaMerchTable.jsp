@@ -54,7 +54,7 @@
             <a href="StaffHomepage.jsp">Admin Home</a>
             <a href="bookingTable.jsp">Booking Table</a>
             <a href="donorTable.jsp">Donor Table</a>
-            <a class="input3" style="text-align: left;" href="staffLogin.jsp">Log Out</a>
+            <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
         </div>
         
         <div id="main">
