@@ -28,7 +28,19 @@
                 border-radius: 25px;
                 padding-left: 20px;
             }
-            
+            input[type=text] {
+                width: 300px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                padding: 12px 20px 12px 20px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=text]:focus {
+                width: 50%;
+            }
         </style>
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
@@ -57,13 +69,10 @@
         
         <div class="background1">
             <div class="containerleft">
-            
                 <h1><b>Book Your Ticket Here.</b></h1>
-            
                 <p>  </p>
-            
                 <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
-                <select size="1" name="gender">
+                <select style="width:25%" size="1" name="gender">
                     <option value="NoGender">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female

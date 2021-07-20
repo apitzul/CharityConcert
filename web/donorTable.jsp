@@ -46,13 +46,14 @@
         
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View Form Page</title>
+        <title>Donor Table</title>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="StaffHomepage.jsp">Area Table</a>
-            <a href="StaffHomepage.jsp">Merchandise Table</a>
+            <a href="StaffHomepage.jsp">Admin Home</a>
+            <a href="areaMerchTable.jsp">Area Table</a>
+            <a href="areaMerchTable.jsp">Merhcnadise Table</a>
             <a href="bookingTable.jsp">Booking Table</a>
             <a class="input3" style="text-align: left;" href="staffLogin.jsp">Log Out</a>
         </div>

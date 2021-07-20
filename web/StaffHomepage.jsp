@@ -45,12 +45,15 @@
         </style>
         
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View Form Page</title>
+        <title>Admin Home</title>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="areaMerchTable.jsp">Area Table</a>
+            <a href="areaMerchTable.jsp">Merhcnadise Table</a>
             <a href="bookingTable.jsp">Booking Table</a>
             <a href="donorTable.jsp">Donor Table</a>
             <a class="input3" style="text-align: left;" href="staffLogin.jsp">Log Out</a>
@@ -77,56 +80,44 @@
                 <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
 
                 <div style="margin-left: 100px" class="divLeft w3-panel">
-                <h1>Area</h1>
+                <h1>Admin Home</h1>
+                <br>
                 <sql:query var="result" dataSource="${myDatasource}">
                 SELECT * FROM AREA
                 </sql:query>
-                <br>
-                <table style="background-color: #818BC8; width:80%" class="w3-table w3-striped w3-text-black">
-                <tr>
-                    <th>Area Id</th>
-                    <th>Area Name</th>
-                    <th>Area Capacity</th>
-                    <th>Area Status</th>
-                    <th>Area Price (RM)</th>
-                </tr>
-                <c:forEach var="row" items="${result.rows}">
-                <tr>
-                    <td><c:out value="${row.AREA_ID}"/></td>
-                    <td><c:out value="${row.AREA_NAME}"/></td>
-                    <td><c:out value="${row.AREA_CAPACITY}"/></td>
-                    <td><c:out value="${row.AREA_STATUS}"/></td>
-                    <td><c:out value="${row.AREA_PRICE}"/></td>
-                </tr>
-                </c:forEach>
-                </table>
+                <div class="w3-quarter">
+                    <div class="w3-container w3-blue w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-ticket w3-xxxlarge"></i></div>
+                        <div class="w3-clear"></div>
+                        <h3>Total Seats Booked</h3>
+                        <h1 class="w3-right">52</h1>
+                        <h5 class="w3-right">RM</h5>
+                        <div class="w3-clear"></div>
+                    </div>
+                </div>
+                <div class="w3-quarter">
+                    <div class="w3-container w3-teal w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
+                        <div class="w3-clear"></div>
+                        <h3>Total Donation</h3>
+                        <h1 class="w3-right">66</h1>
+                        <h5 class="w3-right">RM</h5>
+                        <div class="w3-clear"></div>
+                    </div>
+                </div>
+                <div class="w3-quarter">
+                    <div class="w3-container w3-yellow w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-shopping-bag w3-xxxlarge"></i></div>
+                        <div class="w3-clear"></div>
+                        <h3>Total Merchandise Sold</h3>
+                        <h1 class="w3-right">99</h1>
+                        <h5 class="w3-right">RM</h5>
+                        <div class="w3-clear"></div>
+                    </div>
+                </div>
                 </div>
             </div>
-                <br>    
-            <div>
-                <div style="margin-left: 100px" class="w3-panel">
-                <h1>Merchandise</h1>
-                <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM MERCHANDISE
-                </sql:query>
-                <br>
-                <table style="background-color: #B22222; width:80%" class="w3-table w3-striped w3-text-black">
-                <tr>
-                    <th>Merchandise Id</th>
-                    <th>Merchandise Type</th>
-                    <th>Merchandise Price (RM)</th>
-                </tr>
-                <c:forEach var="row" items="${result.rows}">
-                <tr>
-                    <td><c:out value="${row.MERCHANDISE_ID}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_TYPE}"/></td>
-                    <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
-                </tr>
-                </c:forEach>
-                </table>
-                <br>
-                </div>
-            </div>    
+                <br>       
         </div>
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */

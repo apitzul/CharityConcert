@@ -70,8 +70,13 @@
         <div class="background1">
             <div class="containerleft">
                 <h1>Refunds</h1>
-                <br>
-                <input type="text" name="booking_Id" placeholder="Search Your Booking ID.">
+                <input list="bookId" type="text" name="booking_Id" placeholder="Enter Your Booking ID.">
+                <datalist id="bookId">
+                    <option value="1">Muhd Afiq</option>
+                    <option value="2">Muhd Azim</option>
+                    <option value="3">Muhd Amirul</option>
+                </datalist>
+                <p><input type="text" name="code" placeholder="Enter Code on Your Ticket."></p>
                 <p></p>
                 <br>
                 <input class="input2" type="submit" value="Refund">
