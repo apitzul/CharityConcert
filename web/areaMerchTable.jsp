@@ -111,7 +111,7 @@
                 SELECT * FROM MERCHANDISE
                 </sql:query>
                 <br>
-                <table style="background-color: #B22222; width:80%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #fa4646; width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Merchandise Id</th>
                     <th>Merchandise Type</th>
