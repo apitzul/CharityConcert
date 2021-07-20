@@ -53,7 +53,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="StaffHomepage.jsp">Admin Home</a>
             <a href="areaMerchTable.jsp">Area Table</a>
-            <a href="areaMerchTable.jsp">Merhcnadise Table</a>
+            <a href="areaMerchTable.jsp">Merchandise Table</a>
             <a href="bookingTable.jsp">Booking Table</a>
             <a class="input3" style="text-align: left;" href="staffLogin.jsp">Log Out</a>
         </div>
@@ -85,15 +85,17 @@
                 <table style="background-color: #FFFF33;width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Donor Id</th>
-                    <th>Donor Full Name</th>
-                    <th>Donor Gender</th>
-                    <th>Donor Email</th>
-                    <th>Donor Phone Number</th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
                     <td><c:out value="${row.DONOR_ID}"/></td>
                     <td><c:out value="${row.DONOR_FULL_NAME}"/></td>
+                    <td><c:out value="${row.DONOR_GENDER}"/></td>
                     <td><c:out value="${row.DONOR_AGE}"/></td>
                     <td><c:out value="${row.DONOR_EMAIL}"/></td>
                     <td><c:out value="${row.DONOR_PHONE_NUMBER}"/></td>

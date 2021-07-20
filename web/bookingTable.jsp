@@ -88,9 +88,9 @@
                     <th>Booking Id</th>
                     <th>Donor Id</th>
                     <th>Merchandise Id</th>
-                    <th>Total Price (RM)</th>
-                    <th>Add Value (RM)</th>
                     <th>Final Price (RM)</th>
+                    <th>Add Value (RM)</th>
+                    <th>Total Price (RM)</th>
                     <th>Booking Date (yyyy/mm/dd)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
@@ -98,9 +98,9 @@
                     <td><c:out value="${row.BOOKING_ID}"/></td>
                     <td><c:out value="${row.DONOR_ID}"/></td>
                     <td><c:out value="${row.MERCHANDISE_ID}"/></td>
-                    <td><c:out value="${row.TOTAL_PRICE}"/></td>
-                    <td><c:out value="${row.ADD_VALUE}"/></td>
                     <td><c:out value="${row.FINAL_PRICE}"/></td>
+                    <td><c:out value="${row.ADD_VALUE}"/></td>
+                    <td><c:out value="${row.TOTAL_PRICE}"/></td>
                     <td><c:out value="${row.BOOKING_DATE}"/></td>
                 </tr>
                 </c:forEach>

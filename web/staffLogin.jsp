@@ -11,6 +11,34 @@
     <head>
         <title>Staff Login Page</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+            input[type=text] {
+                width: 300px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                padding: 12px 20px 12px 20px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=text]:focus {
+                width: 50%;
+            }
+            input[type=password] {
+                width: 300px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                padding: 12px 20px 12px 20px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=password]:focus {
+                width: 50%;
+            }
+        </style>
     </head>
     
     <body>

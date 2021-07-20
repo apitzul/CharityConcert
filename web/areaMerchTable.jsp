@@ -86,10 +86,10 @@
                 <table style="background-color: #818BC8; width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Area Id</th>
-                    <th>Area Name</th>
-                    <th>Area Capacity</th>
-                    <th>Area Status</th>
-                    <th>Area Price (RM)</th>
+                    <th>Name</th>
+                    <th>Capacity</th>
+                    <th>Status</th>
+                    <th>Price (RM)</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
