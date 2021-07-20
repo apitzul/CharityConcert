@@ -5,6 +5,7 @@
  */
 package com.dao;
 
+import com.bean.BookingBean;
 import com.bean.DonorBean;
 import com.util.DBconnection;
 import java.sql.Connection;
@@ -12,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -56,6 +58,51 @@ public class DonorDao {
             System.out.println("Error Message : " + ex.toString());
         }
         return "oops";
+    }
+    
+    public ArrayList<DonorBean> selectDonor() {
+        
+        ArrayList<DonorBean> donList = new ArrayList<DonorBean>();
+        
+        
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        int donorIDDB;
+        String donorNameDB;
+        String donorGenderDB;
+        int donorAgeDB;
+        String donorEmailDB;
+        String donorPhoneDB;
+        
+        try {
+            con = DBconnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("SELECT DONOR_ID, DONOR_FULL_NAME, DONOR_GENDER, DONOR_AGE, DONOR_EMAIL, DONOR_PHONE_NUMBER FROM DONOR");
+            while (resultSet.next())
+            {
+                DonorBean donorBean = new DonorBean();
+               
+                donorIDDB = resultSet.getInt("DONOR_ID");
+                donorNameDB = resultSet.getString("DONOR_FULL_NAME");
+                donorGenderDB = resultSet.getString("DONOR_GENDER");
+                donorAgeDB = resultSet.getInt("DONOR_AGE");
+                donorEmailDB = resultSet.getString("DONOR_EMAIL");
+                donorPhoneDB = resultSet.getString("DONOR_PHONE_NUMBER");
+                
+                donorBean.setDonorID(donorIDDB);
+                donorBean.setDonorName(donorNameDB);
+                donorBean.setDonorGender(donorGenderDB);
+                donorBean.setDonorAge(donorAgeDB);
+                donorBean.setDonorEmail(donorEmailDB);
+                donorBean.setDonorPhone(donorPhoneDB);
+                
+                donList.add(donorBean);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return donList;
     }
 }
     
