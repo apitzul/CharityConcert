@@ -43,5 +43,27 @@ public class dataDB {
     }
     
     
+    public int nextBookID(){
+        
+        int bookId=0;
+        int refundId=0;
+        
+        String tableName="BOOKING";
+        String id="BOOKING_ID";
+        
+        bookId=getMaxID(tableName,id);
+        
+        tableName="REFUND";
+        id="BOOKING_ID";
+        
+        refundId=getMaxID(tableName,id);
+        
+        if(refundId>bookId)
+            bookId=refundId+1;
+        else
+            bookId+=1;
+        
+        return bookId;
+    }
     
 }
