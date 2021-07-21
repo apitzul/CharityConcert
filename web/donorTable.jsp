@@ -82,7 +82,7 @@
                 SELECT * FROM DONOR
                 </sql:query>
                 <br>
-                <div style="overflow-y: auto;height: 250px">
+                <div style="overflow-y: auto;height: 500px">
                 <table style="background-color: #fcfc5d;width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Donor Id</th>

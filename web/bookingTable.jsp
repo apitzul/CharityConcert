@@ -84,7 +84,7 @@
                 SELECT * FROM BOOKING
                 </sql:query>
                 <br>
-                <div style="overflow-y: auto;height: 250px">
+                <div style="overflow-y: auto;height: 500px">
                 <table style="background-color: #57fa57;overflow: scroll;width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Booking Id</th>
