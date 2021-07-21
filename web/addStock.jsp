@@ -106,16 +106,10 @@
             <div>
                 <div class="containerleft">
 
-                    <h1><b>Let's get in touch.<br>
-                        Send me a message.</b></h1>
-
+                    <h1><b>Add Stock for Combo A</b></h1>
                 <form method = "post" action = "ContactServlet">
-                    <p>  </p>
-
-                        <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
-                        <input class="input1" type ="text" name ="email" size="31" placeholder="Email">&nbsp;
-                        <input class="input1" type ="text" name ="subject" size="49" placeholder="Subject">&nbsp;  
-                        <textarea class="input1" name ="message" placeholder="Message" style="height: 100px"></textarea>&nbsp;
+                    <p></p>
+                        <input class="input1" type ="number" name ="merchandiseStock" min="1" Style="width:25%" placeholder="Enter Num. of Stock."required>&nbsp;
                         <p> </p>
                         <input class="input2" type="submit" value="Submit">
                         <input class="input3" type="reset" value="Reset">

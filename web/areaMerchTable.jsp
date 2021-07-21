@@ -34,13 +34,13 @@
                 font-size: 34px;
             }
             
-            .background4{
+            .background7{
                 height: 790px;
                 width: 100%;
-                position: absolute;
                 background-size: cover;
                 background-repeat: no-repeat;
-                opacity: 1;
+                position: absolute;
+                opacity: 0.7;
             }
         </style>
         
@@ -58,7 +58,7 @@
         </div>
         
         <div id="main">
-            <img class="background4" src="Image/axiata arena.png">
+            <img class="background7" src="Image/background contact us.jpeg">
             <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
@@ -77,6 +77,7 @@
                 <c:set var="merchandiseType" value="${param.merchandiseType}"/>
                 <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
                 <c:set var="merchandiseStatus" value="${param.merchandiseStatus}"/>
+                <c:set var="merchandiseStock" value="${param.merchandiseStock}"/>
 
                 <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Area</h1>
@@ -112,12 +113,14 @@
                 SELECT * FROM MERCHANDISE
                 </sql:query>
                 <br>
-                <table style="background-color: #fa4646; width:80%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #fa4646; width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Merchandise Id</th>
                     <th>Type</th>
                     <th>Price (RM)</th>
                     <th>Status</th>
+                    <th>Stock</th>
+                    <th></th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
@@ -125,6 +128,8 @@
                     <td><c:out value="${row.MERCHANDISE_TYPE}"/></td>
                     <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
                     <td><c:out value="${row.MERCHANDISE_STATUS}"/></td>
+                    <td><c:out value="${row.MERCHANDISE_STOCK}"/></td>
+                    <td><a class="book" href="addStock.jsp">Add New Stock</a></td>
                 </tr>
                 </c:forEach>
                 </table>

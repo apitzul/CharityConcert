@@ -34,13 +34,13 @@
                 font-size: 34px;
             }
             
-            .background4{
+            .background7{
                 height: 790px;
                 width: 100%;
-                position: absolute;
                 background-size: cover;
                 background-repeat: no-repeat;
-                opacity: 1;
+                position: absolute;
+                opacity: 0.7;
             }
         </style>
         
@@ -59,7 +59,7 @@
         </div>
         
         <div id="main">
-            <img class="background4" src="Image/axiata arena.png">
+            <img class="background7" src="Image/background contact us.jpeg">
             <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
