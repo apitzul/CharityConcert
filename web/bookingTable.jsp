@@ -84,7 +84,7 @@
                 SELECT * FROM BOOKING
                 </sql:query>
                 <br>
-                <table style="background-color: #57fa57; width:85%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #57fa57;overflow: scroll;width:85%;height: 110px;" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Booking Id</th>
                     <th>Donor Id</th>
@@ -96,7 +96,7 @@
                     <th>Code</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
-                <tr>
+                <tr style="overflow: scroll">
                     <td><c:out value="${row.BOOKING_ID}"/></td>
                     <td><c:out value="${row.DONOR_ID}"/></td>
                     <td><c:out value="${row.MERCHANDISE_ID}"/></td>
