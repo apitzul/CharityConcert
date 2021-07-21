@@ -86,4 +86,61 @@ public class MerchandiseDao {
         }
         return totalMerchDB;
     }
+     
+     public String updateMerch(MerchandiseBean merchBean){
+        
+        int id = merchBean.getMerchandiseID();
+        String status = merchBean.getMerchandiseStatus();
+        int stock = merchBean.getMerchandiseStock();
+        try{
+            con = DBconnection.createConnection();
+            prepstatement = con
+                        .prepareStatement("update MERCHANDISE set MERCHANDISE_STOCK=?, MERCHANDISE_STATUS=? where MERCHANDISE_ID=?");
+
+            prepstatement.setInt(1, stock);
+            prepstatement.setString(2, status);
+            prepstatement.setInt(3, id);
+            int R = prepstatement.executeUpdate();
+        
+            if(R!=0) {
+                return "SUCCESS";
+            }
+            return "Invalid user credentials"; // Return appropriate message in case of failure
+        } catch (SQLException ex) {
+            System.out.println("Error Message : " + ex.toString());
+        }
+        return "oops";
+    }
+     
+     public void updateMerchStock(int id){
+        
+        try{
+            con = DBconnection.createConnection();
+            prepstatement = con
+                        .prepareStatement("update MERCHANDISE set MERCHANDISE_STOCK=MERCHANDISE_STOCK-1 where MERCHANDISE_ID=?");
+
+            prepstatement.setInt(1, id);
+            prepstatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("Error Message : " + ex.toString());
+        }
+        
+    }
+     
+    public void updateMerchStatus(int id){
+        
+        try{
+            con = DBconnection.createConnection();
+            prepstatement = con
+                        .prepareStatement("update MERCHANDISE set MERCHANDISE_STATUS='Not Available' where MERCHANDISE_ID=?");
+
+            prepstatement.setInt(1, id);
+            prepstatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("Error Message : " + ex.toString());
+        }
+        
+    }
 }

@@ -20,6 +20,10 @@
         <servlet-name>RefundServlet</servlet-name>
         <servlet-class>com.controller.RefundServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddMerchStockServlet</servlet-name>
+        <servlet-class>com.controller.AddMerchStockServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>receipt</servlet-name>
         <url-pattern>/receipt.view</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>RefundServlet</servlet-name>
         <url-pattern>/RefundServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddMerchStockServlet</servlet-name>
+        <url-pattern>/AddMerchStockServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

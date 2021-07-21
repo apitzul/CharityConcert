@@ -13,6 +13,7 @@ import com.dao.dataDB;
 import com.bean.MerchandiseBean;
 import com.dao.BookingDao;
 import com.dao.DonorDao;
+import com.dao.MerchandiseDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -152,17 +153,36 @@ public class BookingServlet extends HttpServlet {
         bookingBean.setDonorID(donorBean.getDonorID());
        
         
+        MerchandiseDao merchDao = new MerchandiseDao();
         //update merch data
-        if(merch.equals("ComboA"))
+        if(merch.equals("ComboA")){
             bookingBean.setMerchandiseID(1);
-        else if(merch.equals("ComboB"))
+            merchDao.updateMerchStock(1);
+        }
+        else if(merch.equals("ComboB")){
             bookingBean.setMerchandiseID(2);
-        else if(merch.equals("ComboC"))
+            merchDao.updateMerchStock(2);
+        }
+        else if(merch.equals("ComboC")){
             bookingBean.setMerchandiseID(3);
-        else
+            merchDao.updateMerchStock(3);
+        }
+        else if(merch.equals("ComboN")){
             bookingBean.setMerchandiseID(0);
+        }
         
-
+        //update merch status
+        ArrayList<MerchandiseBean> merchList = new ArrayList<MerchandiseBean>();
+        merchList=merchDao.selectMerchandise();
+        
+        for(int i=0;i<merchList.size();i++){
+            MerchandiseBean tempMerch = (MerchandiseBean) merchList.get(i);
+            System.out.println("HAHAHA :"+tempMerch.toString());
+            if(tempMerch.getMerchandiseStock()==0)
+                merchDao.updateMerchStatus(tempMerch.getMerchandiseID());
+        }
+        
+        
         
         
         ArrayList<AreaBean> areaList= (ArrayList<AreaBean>) areaDao.getAreaFromDB();

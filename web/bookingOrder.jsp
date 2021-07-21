@@ -1,3 +1,5 @@
+<%@page import="com.dao.MerchandiseDao"%>
+<%@page import="com.bean.MerchandiseBean"%>
 <%@page import="com.dao.AreaDao"%>
 <%@page import="com.bean.AreaBean"%>
 <%@page import="java.util.ArrayList"%>
@@ -175,12 +177,40 @@
                 </table>
                 <p style="padding: 20px; "></p>
 
+                
+                <%
+                    ArrayList<MerchandiseBean> merchList=new ArrayList<MerchandiseBean>();
+                    MerchandiseDao merchDao = new MerchandiseDao();
+                    
+                    merchList=merchDao.selectMerchandise();
+                    
+                    MerchandiseBean tempMerch = new MerchandiseBean();
+                    tempMerch = (MerchandiseBean) merchList.get(0);
+                    String comboA=tempMerch.getMerchandiseStatus();
+                    System.out.println("INI DIA:"+comboA);
+                    
+                    tempMerch = (MerchandiseBean) merchList.get(1);
+                    String comboB=tempMerch.getMerchandiseStatus();
+                    System.out.println("INI DIA:"+comboB);
+                    
+                    tempMerch = (MerchandiseBean) merchList.get(2);
+                    String comboC=tempMerch.getMerchandiseStatus();
+                    System.out.println("INI DIA:"+comboC);
+                %>
+                
+                
                 <select size="1" name="merchandise" required>
                     <option value="NoMerchandise">Select Merchandise Combo</option>
                     <option value="ComboN">None</option>
+                    <%if(comboA.equals("Available")){%>
                     <option value="ComboA">Combo A</option>
+                    <%}if(comboB.equals("Available")){%>
                     <option value="ComboB">Combo B</option>
+                    <%}if(comboC.equals("Available")){%>
                     <option value="ComboC">Combo C</option>
+                    <%}%>
+                    
+                    
                 </select>&nbsp;
                 
                     <input class="input1" type ="text" name ="extdonation" size="8" placeholder="Extra Donation (RM)" required>&nbsp;

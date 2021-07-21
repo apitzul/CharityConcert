@@ -129,7 +129,7 @@
                     <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
                     <td><c:out value="${row.MERCHANDISE_STATUS}"/></td>
                     <td><c:out value="${row.MERCHANDISE_STOCK}"/></td>
-                    <td><a class="book" href="addStock.jsp">Add New Stock</a></td>
+                    <td><a class="book" href="addStock.jsp?id=${row.MERCHANDISE_ID}&stock=${row.MERCHANDISE_STOCK}">Add New Stock</a></td>
                 </tr>
                 </c:forEach>
                 </table>

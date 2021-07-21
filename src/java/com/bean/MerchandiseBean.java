@@ -67,4 +67,10 @@ public class MerchandiseBean implements java.io.Serializable{
     public void setMerchandisePrice(double merchandisePrice) {
         this.merchandisePrice = merchandisePrice;
     } 
+
+    @Override
+    public String toString() {
+        return "MerchandiseBean{" + "merchandiseID=" + merchandiseID + ", merchandiseStock=" + merchandiseStock + ", merchandiseType=" + merchandiseType + ", merchandiseStatus=" + merchandiseStatus + ", merchandisePrice=" + merchandisePrice + '}';
+    }
+    
 }

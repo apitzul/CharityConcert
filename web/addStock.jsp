@@ -1,3 +1,6 @@
+<%@page import="com.dao.MerchandiseDao"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.bean.MerchandiseBean"%>
 <html>  
     <head>
         <style>            
@@ -86,6 +89,13 @@
         <title>Contact Us.</title>
     </head>
     <body>
+        
+        <%
+            int id = Integer.parseInt(request.getParameter("id"));
+            int stock = Integer.parseInt(request.getParameter("stock"));
+        %>
+        
+        
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
@@ -105,10 +115,17 @@
 
             <div>
                 <div class="containerleft">
-
+                    <%if(id==1){%>
                     <h1><b>Add Stock for Combo A</b></h1>
-                <form method = "post" action = "ContactServlet">
+                    <%}else if(id==2){%>
+                    <h1><b>Add Stock for Combo B</b></h1>
+                    <%}else if(id==3){%>
+                    <h1><b>Add Stock for Combo C</b></h1>
+                    <%}%>
+                <form method = "post" action = "AddMerchStockServlet">
                     <p></p>
+                        <input class="input1" type ="hidden" name ="merchandiseId" value="<%=id%>">
+                        <input class="input1" type ="hidden" name ="merchandiseCurrentStock" value="<%=stock%>">
                         <input class="input1" type ="number" name ="merchandiseStock" min="1" Style="width:25%" placeholder="Enter Num. of Stock."required>&nbsp;
                         <p> </p>
                         <input class="input2" type="submit" value="Submit">
