@@ -11,15 +11,19 @@ package com.bean;
  */
 public class MerchandiseBean implements java.io.Serializable{
     private int merchandiseID;
+    private int merchandiseStock;
     private String merchandiseType;
+    private String merchandiseStatus;
     private double merchandisePrice;
 
-    public MerchandiseBean(int merchandiseID, String merchandiseType, double merchandisePrice) {
+    public MerchandiseBean(int merchandiseID, int merchandiseStock, String merchandiseType, String merchandiseStatus, double merchandisePrice) {
         this.merchandiseID = merchandiseID;
+        this.merchandiseStock = merchandiseStock;
         this.merchandiseType = merchandiseType;
+        this.merchandiseStatus = merchandiseStatus;
         this.merchandisePrice = merchandisePrice;
     }
-    
+   
     public MerchandiseBean() {
 
     }
@@ -28,8 +32,16 @@ public class MerchandiseBean implements java.io.Serializable{
         return merchandiseID;
     }
 
+    public int getMerchandiseStock() {
+        return merchandiseStock;
+    }
+    
     public String getMerchandiseType() {
         return merchandiseType;
+    }
+
+    public String getMerchandiseStatus() {
+        return merchandiseStatus;
     }
 
     public double getMerchandisePrice() {
@@ -40,15 +52,19 @@ public class MerchandiseBean implements java.io.Serializable{
         this.merchandiseID = merchandiseID;
     }
 
+    public void setMerchandiseStock(int merchandiseStock) {
+        this.merchandiseStock = merchandiseStock;
+    }
+
     public void setMerchandiseType(String merchandiseType) {
         this.merchandiseType = merchandiseType;
     }
 
-    public void setMerchandisePrice(double merchandisePrice) {
-        this.merchandisePrice = merchandisePrice;
+    public void setMerchandiseStatus(String merchandiseStatus) {
+        this.merchandiseStatus = merchandiseStatus;
     }
     
-    
-    
-    
+    public void setMerchandisePrice(double merchandisePrice) {
+        this.merchandisePrice = merchandisePrice;
+    } 
 }

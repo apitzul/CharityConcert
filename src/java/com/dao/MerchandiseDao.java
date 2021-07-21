@@ -32,13 +32,15 @@ public class MerchandiseDao {
         
         
         int merchandiseIDDB = 0;
+        int merchandiseStockDB = 0;
         String merchandiseTypeDB = "";
+        String merchandiseStatusDB = "";
         double merchandisePriceDB = 0.0;
         
         try {
             con = DBconnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("SELECT MERCHANDISE_ID, MERCHANDISE_TYPE, MERCHANDISE_PRICE FROM MERCHANDISE");
+            resultSet = statement.executeQuery("SELECT MERCHANDISE_ID, MERCHANDISE_TYPE, MERCHANDISE_PRICE, MERCHANDISE_STOCK, MERCHANDISE_STATUS FROM MERCHANDISE");
             while (resultSet.next())
             {
                 MerchandiseBean merchandiseBean = new MerchandiseBean();
@@ -46,10 +48,14 @@ public class MerchandiseDao {
                 merchandiseIDDB = resultSet.getInt("MERCHANDISE_ID");
                 merchandiseTypeDB = resultSet.getString("MERCHANDISE_TYPE");
                 merchandisePriceDB = resultSet.getDouble("MERCHANDISE_PRICE");
+                merchandiseStockDB = resultSet.getInt("MERCHANDISE_STOCK");
+                merchandiseStatusDB = resultSet.getString("MERCHANDISE_STATUS");
                 
                 merchandiseBean.setMerchandiseID(merchandiseIDDB);
                 merchandiseBean.setMerchandiseType(merchandiseTypeDB);
                 merchandiseBean.setMerchandisePrice(merchandisePriceDB);
+                merchandiseBean.setMerchandiseStock(merchandiseStockDB);
+                merchandiseBean.setMerchandiseStatus(merchandiseStatusDB);
                 
                 merchList.add(merchandiseBean);
             }
