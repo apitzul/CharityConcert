@@ -76,6 +76,7 @@
                 <c:set var="merchandiseId" value="${param.merchandiseId}"/>
                 <c:set var="merchandiseType" value="${param.merchandiseType}"/>
                 <c:set var="merchandisePrice" value="${param.merchandisePrice}"/>
+                <c:set var="merchandiseStatus" value="${param.merchandiseStatus}"/>
 
                 <div style="margin-left: 100px" class="divLeft w3-panel">
                 <h1>Area</h1>
@@ -114,14 +115,16 @@
                 <table style="background-color: #fa4646; width:80%" class="w3-table w3-striped w3-text-black">
                 <tr>
                     <th>Merchandise Id</th>
-                    <th>Merchandise Type</th>
-                    <th>Merchandise Price (RM)</th>
+                    <th>Type</th>
+                    <th>Price (RM)</th>
+                    <th>Status</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                 <tr>
                     <td><c:out value="${row.MERCHANDISE_ID}"/></td>
                     <td><c:out value="${row.MERCHANDISE_TYPE}"/></td>
                     <td><c:out value="${row.MERCHANDISE_PRICE}"/></td>
+                    <td><c:out value="${row.MERCHANDISE_STATUS}"/></td>
                 </tr>
                 </c:forEach>
                 </table>
