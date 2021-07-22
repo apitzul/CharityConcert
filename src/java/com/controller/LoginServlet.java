@@ -99,6 +99,7 @@ public class LoginServlet extends HttpServlet {
          }
          else
          {
+             
              System.out.println("FLAG FAIL TO LOGIN");
              request.setAttribute("errMessage", userValidate); 
              request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);

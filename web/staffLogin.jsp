@@ -42,6 +42,22 @@
     </head>
     
     <body>
+        
+        
+        <!--Error PopUp-->
+        <script type="text/javascript"> 
+            
+        var errMessage= '<%=request.getAttribute("errMessage")%>';  
+         
+        if (errMessage != "null") {   
+            function alertName(){
+                alert("Invalid User Credential !\n- Wrong Username or Password");
+            } 
+        }
+        window.onload = alertName;  
+        </script>
+        
+        
         <div id="mySidenav" class="sidenav"> 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.html">Home</a>
@@ -75,8 +91,7 @@
                     <p></p>
 
                     <input class="input2" type="submit" value="Log in">
-                    <p style="color:red"><%=(request.getAttribute("errMessage") == null) ? ""
-         : request.getAttribute("errMessage")%></p>
+                    
                 </div>            
             </div>
         </form>

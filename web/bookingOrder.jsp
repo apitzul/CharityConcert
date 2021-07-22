@@ -51,15 +51,15 @@
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
     </head>
-        
+    
+        <!--Error PopUp-->
         <script type="text/javascript"> 
-        
         function alertName(){
-            alert("Form has been submitted");
+            alert("error");
         } 
-        window.onload = alertName;
-        
+        window.onload = alertName;  
         </script>
+        
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
