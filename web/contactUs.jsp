@@ -88,8 +88,13 @@
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
-            <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
+            <a href="homepage.html">Home</a>
+            <a href="aboutUs.html">About</a>
+            <a href="aboutArtist.html">Artist</a>
+            <a href="contactUs.jsp">Contact</a>
+            <a href="staffLogin.jsp">Admin</a>
+            <a href="refund.jsp">Refund</a>
+            <a class="w3-text-blue" href="bookingOrder.jsp"><b>Book</b></a>
         </div>
         <div id="main">
             <div>

@@ -93,7 +93,7 @@
                     <th>Final Price (RM)</th>
                     <th>Add Value (RM)</th>
                     <th>Total Price (RM)</th>
-                    <th>Booking Date (yyyy/mm/dd)</th>
+                    <th>Booking Date (yyyy-mm-dd)</th>
                     <th>Code</th>
                 </tr>
                 
