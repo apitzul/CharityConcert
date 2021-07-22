@@ -136,31 +136,34 @@ and open the template in the editor.
                                 <td><b></b>RM50 x <%=b%> unit<br></td>
                             </tr>
                             <tr>
-                                <td><b>Merchandise Details:</b><br></td>
                                 <%if(bookingBean.getMerchandiseID()==1){%>
                                 <td><b></b>Combo A<br></td>
+                                <td>Rm20</td>
                                 <%}else if(bookingBean.getMerchandiseID()==2){%>
                                  <td><b></b>Combo B<br></td>
+                                 <td>Rm50</td>
                                 <%}else if(bookingBean.getMerchandiseID()==3){%>
                                  <td><b></b>Combo C<br></td>
+                                 <td>Rm85</td>
                                  <%}else{%>
-                                 <td><b></b>None<br></td>
+                                 <td><b>Merchandise Combo</b><br></td>
+                                 <td>None<br></td>
                                  <%}%>
+                                 
                             </tr>
                             <tr>    
                                 <td><b>Donation</b><br></td>
-                                <td><b></b>RM <%=bookingBean.getAddValue()%><br></td>
+                                <td><b></b>RM<%=bookingBean.getAddValue()%><br></td>
                             </tr>
                             
                             <tr>    
                                 <td><b>Total Price</b><br></td>
-                                <td><b></b>RM <%=bookingBean.getTotalPrice()%><br></td>
+                                <td><b></b>RM<%=bookingBean.getTotalPrice()%><br></td>
                             </tr>
 
                         </tbody> 
                     </table>
                     <p></p>
-                    
                     <a class="book" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
                 </div>
@@ -169,7 +172,6 @@ and open the template in the editor.
                 <h1>Thank You !!<br></h1>
                 <h4>Enjoy the concert while make a donation is best way to have a good deed. Congratulations !<br></h4>
                 <p class="note">*You may save or print the full receipt</p>
-                <br><br>
                 <a class="input2" href="homepage.html" >Finish Payment</a>
             </div>    
         </div>
