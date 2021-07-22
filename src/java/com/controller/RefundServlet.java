@@ -78,7 +78,7 @@ public class RefundServlet extends HttpServlet {
         
         int bookId = Integer.parseInt(request.getParameter("booking_Id"));
         String code = request.getParameter("code");
-        String validateRefund = "FAIL"; 
+        String validateRefund = "null"; 
         BookingDao bookDao= new BookingDao();
         
         ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();
@@ -98,6 +98,7 @@ public class RefundServlet extends HttpServlet {
         if(validateRefund.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS TO REFUND");
+             request.setAttribute("succMessage", validateRefund); 
              request.getRequestDispatcher("/refund.jsp").forward(request, response);
          }
          else

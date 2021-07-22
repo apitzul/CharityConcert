@@ -139,11 +139,11 @@ public class BookingDao {
             if(R!=0) {
                 return "SUCCESS";
             }
-            return "Invalid user credentials"; // Return appropriate message in case of failure
+            return "FAIL"; // Return appropriate message in case of failure
         } catch (SQLException ex) {
             System.out.println("Error Message : " + ex.toString());
         }
-        return "oops";
+        return "FAIL";
     }
     
     public ArrayList<BookingBean> selectBooking() {

@@ -50,6 +50,26 @@
         </style>
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
+        
+        <!--Error PopUp-->
+        <script type="text/javascript"> 
+            
+        var succMessage= '<%=request.getAttribute("succMessage")%>';  
+        var errMessage= '<%=request.getAttribute("errMessage")%>';  
+        
+        if (succMessage != "null") {   
+            function alertName(){
+                alert("You had successfully refund!");
+            } 
+        }
+        
+        else if (errMessage != "null") {   
+            function alertName(){
+                alert("Sorry, refund unsuccessful (Please enter the right ID/Code)");
+            } 
+        }
+        window.onload = alertName;  
+        </script>
     </head>
     
     <body>
