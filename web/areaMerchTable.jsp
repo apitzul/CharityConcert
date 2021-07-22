@@ -47,6 +47,19 @@
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Area & Merchandise Table</title>
+        
+        <!--Error PopUp-->
+        <script type="text/javascript"> 
+            
+        var succMessage= '<%=request.getAttribute("succMessage")%>';  
+         
+        if (succMessage != "null") {   
+            function alertName(){
+                alert("Successfully added new stock!");
+            } 
+        }
+        window.onload = alertName;  
+        </script>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">

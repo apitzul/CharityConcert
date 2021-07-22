@@ -92,12 +92,12 @@ public class AddMerchStockServlet extends HttpServlet {
          {
 
              System.out.println("FLAG SUCCESS TO LOGIN");
+             request.setAttribute("succMessage", userValidate); 
              request.getRequestDispatcher("/areaMerchTable.jsp").forward(request, response);
          }
          else
          {
-             System.out.println("FLAG FAIL TO LOGIN");
-             request.setAttribute("errMessage", userValidate); 
+             System.out.println("FLAG FAIL TO LOGIN");            
              request.getRequestDispatcher("/areaMerchTable.jsp").forward(request, response);
          }
     }

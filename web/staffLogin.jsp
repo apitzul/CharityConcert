@@ -85,8 +85,8 @@
 
                     <p>  </p>    
 
-                    <input class="input1" type ="text" name = "username" size="49" placeholder="Enter Username" >&nbsp;
-                    <input class="input1" type ="password" name ="password" size="31" placeholder="Enter Password">&nbsp;
+                    <input class="input1" type ="text" name = "username" size="49" placeholder="Enter Username" required>&nbsp;
+                    <input class="input1" type ="password" name ="password" size="31" placeholder="Enter Password" required>&nbsp;
 
                     <p></p>
 

@@ -75,7 +75,7 @@
         <div class="background1">
             <div class="containerleft">
                 <h1>Refunds</h1>
-                <input list="bookId" type="text" name="booking_Id" placeholder="Enter Your Booking ID.">
+                <input list="bookId" type="text" name="booking_Id" placeholder="Enter Your Booking ID." required>
                 <datalist id="bookId">
                     <%
                     BookingDao bookDao=new BookingDao();
@@ -90,7 +90,7 @@
                     %>
                     <option value="<%=temp.getBookingID()%>"><%=donor.getDonorName()%></option><%}%>
                 </datalist>
-                <p><input type="text" name="code" placeholder="Enter Code on Your Ticket."></p>
+                <p><input type="text" name="code" placeholder="Enter Code on Your Ticket." required></p>
                 <p></p>
                 <br>
                 <input class="input2" type="submit" value="Refund">

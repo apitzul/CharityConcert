@@ -99,6 +99,7 @@ public class ContactServlet extends HttpServlet {
         if(userValidate.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS");
+             request.setAttribute("succMessage", userValidate);
              request.getRequestDispatcher("/contactUs.jsp").forward(request, response);
          }
          else

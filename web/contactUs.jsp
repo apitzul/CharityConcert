@@ -84,6 +84,19 @@
         
         <link rel="stylesheet" href="style.css">
         <title>Contact Us.</title>
+        
+         <!--Error PopUp-->
+        <script type="text/javascript"> 
+            
+        var succMessage= '<%=request.getAttribute("succMessage")%>';  
+         
+        if (succMessage != "null") {   
+            function alertName(){
+                alert("Your message had been sent, Thank you!");
+            } 
+        }
+        window.onload = alertName;  
+        </script>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">
@@ -117,10 +130,10 @@
                 <form method = "post" action = "ContactServlet">
                     <p>  </p>
 
-                        <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" >&nbsp;
-                        <input class="input1" type ="text" name ="email" size="31" placeholder="Email">&nbsp;
-                        <input class="input1" type ="text" name ="subject" size="49" placeholder="Subject">&nbsp;  
-                        <textarea class="input1" name ="message" placeholder="Message" style="height: 100px"></textarea>&nbsp;
+                        <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
+                        <input class="input1" type ="text" name ="email" size="31" placeholder="Email" required>&nbsp;
+                        <input class="input1" type ="text" name ="subject" size="49" placeholder="Subject" required>&nbsp;  
+                        <textarea class="input1" name ="message" placeholder="Message" style="height: 100px" required></textarea>&nbsp;
                         <p> </p>
                         <input class="input2" type="submit" value="Submit">
                         <input class="input3" type="reset" value="Reset">
