@@ -130,9 +130,9 @@
                 <form method = "post" action = "ContactServlet">
                     <p>  </p>
 
-                        <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
-                        <input class="input1" type ="text" name ="email" size="31" placeholder="Email" required>&nbsp;
-                        <input class="input1" type ="text" name ="subject" size="49" placeholder="Subject" required>&nbsp;  
+                        <input style="border-radius: 4px" class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
+                        <input style="border-radius: 4px" class="input1" type ="text" name ="email" size="31" placeholder="Email" required>&nbsp;
+                        <input style="border-radius: 4px" class="input1" type ="text" name ="subject" size="49" placeholder="Subject" required>&nbsp;  
                         <textarea class="input1" name ="message" placeholder="Message" style="height: 100px" required></textarea>&nbsp;
                         <p> </p>
                         <input class="input2" type="submit" value="Submit">
