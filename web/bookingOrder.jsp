@@ -54,10 +54,31 @@
     
         <!--Error PopUp-->
         <script type="text/javascript"> 
-        function alertName(){
-            alert("error");
-        } 
+            
+        var errMessage= '<%=request.getAttribute("errMessage")%>';  
+         
+        if (errMessage != "null") {   
+            function alertName(){
+                alert("Invalid User Credential !\n- Wrong Username or Password");
+            } 
+        }
         window.onload = alertName;  
+        
+        function validate()
+        {   
+        var ticketY = document.form.yellowTicket.value; 
+        var ticketO = document.form.orangeTicket.value;
+        var ticketG = document.form.greenTicket.value;
+        var ticketB = document.form.blueTicket.value;
+
+        if (ticketY==0 && ticketO==0 && ticketG==0 && ticketB==0)
+        { 
+        alert("Choose at least 1 type of area ticket"); 
+        return false; 
+        }
+        else
+            return true;
+        }
         </script>
         
     <body>
@@ -72,7 +93,7 @@
         </div>
         
         <div id="main">
-        <form name="form" action="BookingServlet" method="POST">
+            <form name="form" action="BookingServlet" method="POST" onsubmit="return validate()">
         <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
@@ -92,8 +113,8 @@
                     <option value="Female">Female
                     </option>
                 </select>&nbsp;
-                <input class="input1" type ="text" name ="age" size="31" placeholder="Age" required>&nbsp;
-                <input class="input1" type ="text" name ="pNumber" size="49" placeholder="Phone Number" required>&nbsp;  
+                <input class="input1" type ="number" min="1" name ="age" size="31" placeholder="Age" required>&nbsp;
+                <input class="input1" type ="tel" pattern="[0][1][0-9]{1}-[0-9]{7,8}" name ="pNumber" size="49" placeholder="Phone Number(eg:01X-XXXXXXXX)" required>&nbsp;                     
                 <input class="input1" type ="text" name ="email" size="49" placeholder="Email" required>&nbsp; 
                 
                 <p class="noteGrey">
@@ -221,7 +242,7 @@
                     
                 </select>&nbsp;
                 
-                    <input class="input1" type ="text" name ="extdonation" size="8" placeholder="Extra Donation (RM)" required>&nbsp;
+                    <input class="input1" type ="number" min="0" name ="extdonation" size="8" placeholder="Extra Donation (RM)" required>&nbsp;
                    
                 <div>
                     <input class="input2" type="submit" value="Checkout">
