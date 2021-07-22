@@ -40,11 +40,24 @@
                 border: 2px solid #ccc;
                 border-radius: 4px;
                 font-size: 16px;
-                padding: 12px 20px 12px 20px;
+                padding: 12px 20px 12px 13px;
                 -webkit-transition: width 0.4s ease-in-out;
                 transition: width 0.4s ease-in-out;
             }
             input[type=text]:focus {
+                width: 50%;
+            }
+            input[type=tel] {
+                width: 300px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                padding: 12px 20px 12px 13px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=tel]:focus {
                 width: 50%;
             }
         </style>
@@ -107,14 +120,14 @@
                 <h1><b>Book Your Ticket Here.</b></h1>
                 <p>  </p>
                 <input class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
-                <select style="width:25%" size="1" name="gender" required>
+                <select style="width:25%; padding: 12px 20px 12px 13px;border-radius: 4px" size="1" name="gender" required>
                     <option value="NoGender">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female
                     </option>
                 </select>&nbsp;
-                <input class="input1" type ="number" min="1" name ="age" size="31" placeholder="Age" required>&nbsp;
-                <input class="input1" type ="tel" pattern="[0][1][0-9]{1}-[0-9]{7,8}" name ="pNumber" size="49" placeholder="Phone Number(eg:01X-XXXXXXXX)" required>&nbsp;                     
+                <input class="input1" style="width:25%; padding: 12px 20px 12px 13px;border-radius: 4px" type ="number" min="1" name ="age" size="31" placeholder="Age" required>&nbsp;
+                <input class="input1" type ="tel" pattern="[0][1][0-9]{1}-[0-9]{7,8}" name ="pNumber" size="49" placeholder="Phone Num (eg:01X-XXXXXXXX)" required>&nbsp;                     
                 <input class="input1" type ="text" name ="email" size="49" placeholder="Email" required>&nbsp; 
                 
                 <p class="noteGrey">
@@ -216,15 +229,13 @@
                     MerchandiseBean tempMerch = new MerchandiseBean();
                     tempMerch = (MerchandiseBean) merchList.get(0);
                     String comboA=tempMerch.getMerchandiseStatus();
-                    System.out.println("INI DIA:"+comboA);
                     
                     tempMerch = (MerchandiseBean) merchList.get(1);
                     String comboB=tempMerch.getMerchandiseStatus();
-                    System.out.println("INI DIA:"+comboB);
                     
                     tempMerch = (MerchandiseBean) merchList.get(2);
                     String comboC=tempMerch.getMerchandiseStatus();
-                    System.out.println("INI DIA:"+comboC);
+
                 %>
                 
                 
