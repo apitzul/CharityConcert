@@ -78,7 +78,7 @@ public class RefundServlet extends HttpServlet {
         
         int bookId = Integer.parseInt(request.getParameter("booking_Id"));
         String code = request.getParameter("code");
-        String validateRefund = "null"; 
+        String validateRefund = "FAIL"; 
         BookingDao bookDao= new BookingDao();
         
         ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();

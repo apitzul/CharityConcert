@@ -55,6 +55,20 @@ and open the template in the editor.
         
         <link rel="stylesheet" href="style.css">
         
+        <!--Error PopUp-->
+        <script type="text/javascript"> 
+            
+        var succMessage= '<%=request.getAttribute("succMessage")%>';  
+        var errMessage= '<%=request.getAttribute("errMessage")%>';  
+        
+        if (succMessage != "null") {   
+            function alertName(){
+                alert("Congratulation, Your ticket had been booked!");
+            } 
+        }
+        window.onload = alertName;  
+        </script>
+        
     </head>
     
     <%

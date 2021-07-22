@@ -51,6 +51,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Home</title>
+        
+        <!--Error PopUp-->
+        <script type="text/javascript"> 
+        
+            function alertName(){
+                alert("Welcome to DoNation Administration Page!");
+            } 
+
+        window.onload = alertName;  
+        </script>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">

@@ -234,13 +234,15 @@ public class BookingServlet extends HttpServlet {
              request.setAttribute("ticketY",yellowTicket);
              request.setAttribute("ticketO",orangeTicket);
              request.setAttribute("ticketG",greenTicket);
-             request.setAttribute("ticketB",blueTicket);            
+             request.setAttribute("ticketB",blueTicket);      
+             request.setAttribute("succMessage", insertBooking);
              request.getRequestDispatcher("/receiptOrder.jsp").forward(request, response);
          }
          else
          {
-             System.out.println("FLAG FAIL TO INSERT BOOKING");       
-             request.getRequestDispatcher("/staffLogin.jsp").forward(request, response);
+             System.out.println("FLAG FAIL TO INSERT BOOKING");    
+             request.setAttribute("errMessage", insertBooking);
+             request.getRequestDispatcher("/bookingOrder.jsp").forward(request, response);
          }
         
     }
