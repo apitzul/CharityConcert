@@ -209,7 +209,6 @@
                 
                 <select size="1" name="merchandise" required>
                     <option value="NoMerchandise">Select Merchandise Combo</option>
-                    <option value="ComboN">None</option>
                     <%if(comboA.equals("Available")){%>
                     <option value="ComboA">Combo A</option>
                     <%}if(comboB.equals("Available")){%>
