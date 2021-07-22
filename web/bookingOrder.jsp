@@ -1,4 +1,3 @@
-<%@page import="java.awt.SystemColor.window"%>
 <%@page import="com.dao.MerchandiseDao"%>
 <%@page import="com.bean.MerchandiseBean"%>
 <%@page import="com.dao.AreaDao"%>
@@ -52,7 +51,15 @@
         <title>Booking of Charity Concert</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    
+        
+        <script type="text/javascript"> 
+        
+        function alertName(){
+            alert("Form has been submitted");
+        } 
+        window.onload = alertName;
+        
+        </script>
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
