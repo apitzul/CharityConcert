@@ -220,11 +220,11 @@ public class BookingServlet extends HttpServlet {
         if(yellowTicket!=0)
         bookDao.insertBookingArea(bookingBean.getBookingID(),1,yellowTicket);
         if(orangeTicket!=0)
-        bookDao.insertBookingArea(bookingBean.getBookingID(),1,orangeTicket);
+        bookDao.insertBookingArea(bookingBean.getBookingID(),2,orangeTicket);
         if(greenTicket!=0)
-        bookDao.insertBookingArea(bookingBean.getBookingID(),1,greenTicket);
+        bookDao.insertBookingArea(bookingBean.getBookingID(),3,greenTicket);
         if(blueTicket!=0)
-        bookDao.insertBookingArea(bookingBean.getBookingID(),1,blueTicket);
+        bookDao.insertBookingArea(bookingBean.getBookingID(),4,blueTicket);
         
         if(insertBooking.equals("SUCCESS")) 
          {

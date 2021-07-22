@@ -1,3 +1,4 @@
+<%@page import="java.awt.SystemColor.window"%>
 <%@page import="com.dao.MerchandiseDao"%>
 <%@page import="com.bean.MerchandiseBean"%>
 <%@page import="com.dao.AreaDao"%>
