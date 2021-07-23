@@ -178,7 +178,7 @@ and open the template in the editor.
                         </tbody> 
                     </table>
                     <p></p>
-                    <a class="book" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>" target="_blank">Print Your Ticket</a><br>
+                    <a class="book" href="ticketview.jsp?y=<%=y%>&o=<%=o%>&g=<%=g%>&b=<%=b%>&merch=<%=bookingBean.getMerchandiseID()%>&code=<%=bookingBean.getCode()%>&id=<%=bookingBean.getBookingID()%>" target="_blank">Print Your Ticket</a><br>
                     <p class="note">*Click your ticket link and please print or make a screenshot of the ticket.</p>
                 </div>
             </div>

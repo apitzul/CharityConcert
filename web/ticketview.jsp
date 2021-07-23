@@ -44,7 +44,7 @@ and open the template in the editor.
             position: absolute;
           
             top: 553px;
-            left: 117px;
+            left: 61px;
             display:flex;
             }
             .box{
@@ -68,6 +68,7 @@ and open the template in the editor.
        String b = request.getParameter("b");
        String merch = request.getParameter("merch");
        String code = request.getParameter("code");
+       String id = request.getParameter("id");
     %>
         <div class="container1">
             <img src="Image/ticket.png" >
@@ -117,7 +118,8 @@ and open the template in the editor.
                     
                 </div>
                 <div class="bottom-left ticketCode">
-                           Code: <b><%=code%></b>
+                           
+                    Booking Id: <b><%=id%></b>&nbsp; Code: <b><%=code%></b>
                 </div>
          </div>
 
