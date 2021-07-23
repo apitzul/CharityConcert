@@ -67,6 +67,7 @@
             <a href="StaffHomepage.jsp">Admin Home</a>
             <a href="bookingTable.jsp">Booking Table</a>
             <a href="donorTable.jsp">Donor Table</a>
+            <a href="contactTable.jsp">Contact Us Table</a>
             <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
         </div>
         

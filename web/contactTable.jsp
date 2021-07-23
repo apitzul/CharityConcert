@@ -46,7 +46,7 @@
         
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Donor Table</title>
+        <title>Booking Table</title>
     </head>
     <body>
         <div id="mySidenav" class="sidenav">
@@ -54,8 +54,8 @@
             <a href="StaffHomepage.jsp">Admin Home</a>
             <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
             <a href="bookingTable.jsp">Booking Table</a>
+            <a href="donorTable.jsp">Donor Table</a>
             <a href="refundTable.jsp">Refund Table</a>
-            <a href="contactTable.jsp">Contact Us Table</a>
             <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
         </div>
         
@@ -70,43 +70,43 @@
             </div>
 
             <div>
-                <c:set var="donorId" value="${param.donorId}"/>
-                <c:set var="donorFname" value="${param.donorFname}"/>
-                <c:set var="donorGender" value="${param.donorGender}"/>
-                <c:set var="donorAge" value="${param.donorAge}"/>
-                <c:set var="donorEmail" value="${param.donorEmail}"/>
-                <c:set var="donorPhone" value="${param.donorPhone}"/>
+                <c:set var="contactId" value="${param.contactId}"/>
+                <c:set var="contactFname" value="${param.contactFname}"/>
+                <c:set var="contactEmail" value="${param.contactEmail}"/>
+                <c:set var="contactSubject" value="${param.contactSubject}"/>
+                <c:set var="contactMessage" value="${param.contactMessage}"/>
 
                 <div style="margin-left: 100px" class="divLeft w3-panel">
-                <h1>Donor</h1>
+                <h1>Contact Us</h1>
                 <sql:query var="result" dataSource="${myDatasource}">
-                SELECT * FROM DONOR
+                SELECT * FROM CONTACT
                 </sql:query>
                 <br>
                 <div style="overflow-y: auto;height: 500px">
-                <table style="background-color: #fcfc5d;width:85%" class="w3-table w3-striped w3-text-black">
+                <table style="background-color: #57fa57;overflow: scroll;width:85%" class="w3-table w3-striped w3-text-black">
                 <tr>
-                    <th>Donor Id</th>
+                    <th>Contact Us Id</th>
                     <th>Full Name</th>
-                    <th>Gender</th>
-                    <th>Age</th>
                     <th>Email</th>
-                    <th>Phone Number</th>
+                    <th>Subject</th>
+                    <th>Message</th>
                 </tr>
+                
                 <c:forEach var="row" items="${result.rows}">
+                
                 <tr>
-                    <td><c:out value="${row.DONOR_ID}"/></td>
-                    <td><c:out value="${row.DONOR_FULL_NAME}"/></td>
-                    <td><c:out value="${row.DONOR_GENDER}"/></td>
-                    <td><c:out value="${row.DONOR_AGE}"/></td>
-                    <td><c:out value="${row.DONOR_EMAIL}"/></td>
-                    <td><c:out value="${row.DONOR_PHONE_NUMBER}"/></td>
+                    <td><c:out value="${row.CONTACT_ID}"/></td>
+                    <td><c:out value="${row.FULLNAME}"/></td>
+                    <td><c:out value="${row.EMAIL}"/></td>
+                    <td><c:out value="${row.SUBJECT}"/></td>
+                    <td><c:out value="${row.MESSAGE}"/></td>
                 </tr>
+                
                 </c:forEach>
                 </table>
                 </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
@@ -125,5 +125,3 @@
         </script>
     </body>
 </html>
-  
-     
