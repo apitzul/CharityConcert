@@ -13,14 +13,14 @@ import java.sql.DriverManager;
  * @author azimd
  */
 public class DBconnection {
+    //Create a connection to the Charity DB
     public static Connection createConnection() {
         Connection con = null;
         String url = "jdbc:derby://localhost:1527/CharityConcert";
         String username = "app";
         String password = "app";
         
-        try{
-            
+        try{           
             String driver = "org.apache.derby.jdbc.ClientDriver";
             String connectionString = "jdbc:derby://localhost:1527/CharityConcert;create=true;user=app;password=app";
             
