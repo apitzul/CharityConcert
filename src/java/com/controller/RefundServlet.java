@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.controller;
 
 import com.bean.BookingBean;
@@ -15,10 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author apitz
- */
 public class RefundServlet extends HttpServlet {
 
     /**
@@ -76,18 +67,24 @@ public class RefundServlet extends HttpServlet {
         
         System.out.println("FLAG INTO SERVLET");
         
+        //Get all field parameters
         int bookId = Integer.parseInt(request.getParameter("booking_Id"));
         String code = request.getParameter("code");
         String validateRefund = "FAIL"; 
+        
+        //Declaration of BookingDao
         BookingDao bookDao= new BookingDao();
         
+        //Declaration of bookList
         ArrayList<BookingBean> bookList=new ArrayList<BookingBean>();
         
         bookList=bookDao.selectBooking();
 
+        //Search for booking ID
         for(int i=0;i<bookList.size();i++){
             BookingBean temp=(BookingBean) bookList.get(i);
             
+            //If found, make a refund
             if((temp.getBookingID()==bookId)&&(temp.getCode().equals(code))){
                 validateRefund = bookDao.insertRefund(temp);
                 bookDao.deleteRefundBook(bookId);
@@ -95,6 +92,7 @@ public class RefundServlet extends HttpServlet {
             } 
         }
  
+        //Redirect to page
         if(validateRefund.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS TO REFUND");

@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bean;
 
-/**
- *
- * @author azimd
- */
+//A class named AreaBean
 public class AreaBean implements java.io.Serializable{
+    //Instance variables or attributes
     private int areaID;
     private String areaName;
     private int areaCapacity;
     private String areaStatus;
     private double areaPrice;
 
+    //Normal constructor
     public AreaBean(int areaID, String areaName, int areaCapacity, String areaStatus, double areaPrice) {
         this.areaID = areaID;
         this.areaName = areaName;
@@ -24,10 +18,12 @@ public class AreaBean implements java.io.Serializable{
         this.areaPrice = areaPrice;
     }
     
+    //Default constructor
     public AreaBean() {
  
     }
 
+    //Getter(accessor) method
     public int getAreaID() {
         return areaID;
     }
@@ -48,6 +44,7 @@ public class AreaBean implements java.io.Serializable{
         return areaPrice;
     }
 
+    //Setter(mutator) method
     public void setAreaID(int areaID) {
         this.areaID = areaID;
     }

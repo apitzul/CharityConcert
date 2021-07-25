@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bean;
 
-/**
- *
- * @author azimd
- */
+//A class named DonorBean
 public class DonorBean implements java.io.Serializable{
     private int donorID;
     private String donorName;
@@ -17,6 +9,7 @@ public class DonorBean implements java.io.Serializable{
     private String donorEmail;
     private String donorPhone;
 
+    //Normal constructor 
     public DonorBean(int donorID, String donorName, String donorGender, int donorAge, String donorEmail, String donorPhone) {
         this.donorID = donorID;
         this.donorName = donorName;
@@ -26,10 +19,12 @@ public class DonorBean implements java.io.Serializable{
         this.donorPhone = donorPhone;
     }
 
+    //Default constructor
     public DonorBean(){
     
     }
     
+    //Getter(accessor) method & //Setter(mutator) method
     public int getDonorID() {
         return donorID;
     }
@@ -54,6 +49,7 @@ public class DonorBean implements java.io.Serializable{
         return donorPhone;
     }
 
+    //Setter(mutator) method
     public void setDonorID(int donorID) {
         this.donorID = donorID;
     }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.controller;
 
 import com.bean.AreaBean;
@@ -26,10 +21,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author apitz
- */
 @WebServlet(name = "BookingServlet", urlPatterns = {"/BookingServlet"})
 public class BookingServlet extends HttpServlet {
 
@@ -85,7 +76,7 @@ public class BookingServlet extends HttpServlet {
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
-        //get all fieelds parameter
+        //Get all fields parameter
         System.out.println("FLAG INTO SERVLET");
         String fullName = request.getParameter("fullName");
         String age = request.getParameter("age");
@@ -105,13 +96,13 @@ public class BookingServlet extends HttpServlet {
         
         double addValue = Double.parseDouble(extra);
         
-        //bean declaration
+        //Declaration of bean
         BookingBean bookingBean = new BookingBean(); 
         DonorBean donorBean = new DonorBean();
         MerchandiseBean merchBean = new MerchandiseBean();
         
         dataDB table= new dataDB();
-        //insert donor data
+        //Set DonorBean data
         donorBean.setDonorID(table.nextID("DONOR","DONOR_ID"));
         donorBean.setDonorName(fullName);
         donorBean.setDonorGender(gender);
@@ -122,14 +113,17 @@ public class BookingServlet extends HttpServlet {
         donorDao.insertDonor(donorBean);
 
         donorBean.toString();
-        //update area data
+        
+        //AreaDao declaration
         AreaDao areaDao=new AreaDao();
         
+        //AreaBean declaration
         AreaBean areaBeanY= new AreaBean();
         AreaBean areaBeanO= new AreaBean();
         AreaBean areaBeanG= new AreaBean();
         AreaBean areaBeanB= new AreaBean();
         
+        //Set value to each Area bean
         areaBeanY.setAreaID(1);
         areaBeanY.setAreaCapacity(yellowTicket);
         areaBeanO.setAreaID(2);
@@ -139,6 +133,7 @@ public class BookingServlet extends HttpServlet {
         areaBeanB.setAreaID(4);
         areaBeanB.setAreaCapacity(blueTicket);
         
+        //Update area data
         try {
             areaDao.updateAreaToDB(areaBeanY);
             areaDao.updateAreaToDB(areaBeanO);
@@ -152,9 +147,10 @@ public class BookingServlet extends HttpServlet {
         bookingBean.setBookingID(table.nextID("BOOKING","BOOKING_ID"));
         bookingBean.setDonorID(donorBean.getDonorID());
        
-        
+        //MerchandiseDao declaration
         MerchandiseDao merchDao = new MerchandiseDao();
-        //update merch data
+        
+        //Update Merchandise data
         if(merch.equals("ComboA")){
             bookingBean.setMerchandiseID(1);
             merchDao.updateMerchStock(1);
@@ -171,7 +167,7 @@ public class BookingServlet extends HttpServlet {
             bookingBean.setMerchandiseID(0);
         }
         
-        //update merch status
+        //Update Merchandise status
         ArrayList<MerchandiseBean> merchList = new ArrayList<MerchandiseBean>();
         merchList=merchDao.selectMerchandise();
         
@@ -181,12 +177,11 @@ public class BookingServlet extends HttpServlet {
             if(tempMerch.getMerchandiseStock()==0)
                 merchDao.updateMerchStatus(tempMerch.getMerchandiseID());
         }
-        
-        
-        
-        
+               
+        //AreaList declaration
         ArrayList<AreaBean> areaList= (ArrayList<AreaBean>) areaDao.getAreaFromDB();
-        //final price calculation
+        
+        //Final price calculation
         double finalPrice=0.0;    
         AreaBean temp= new AreaBean();
         temp= areaList.get(0);
@@ -202,7 +197,8 @@ public class BookingServlet extends HttpServlet {
         finalPrice+=blueTicket*temp.getAreaPrice();
 
         System.out.println("FinalPrice = "+finalPrice);
-        //set all bookingbean data    
+        
+        //Set all BookingBean data    
         bookingBean.setBookingDate(java.time.LocalDate.now().toString());
         bookingBean.setFinalPrice(finalPrice);
         bookingBean.setAddValue(addValue);
@@ -210,13 +206,12 @@ public class BookingServlet extends HttpServlet {
         
         dataDB data=new dataDB();
         bookingBean.setCode(data.generateRandomString(10));
-        //inset booking
+        
+        //Inset booking into database
         BookingDao bookDao=new BookingDao();
         String insertBooking = bookDao.insertBooking(bookingBean);
 
-        //insert booking area
-      
-        
+        //Insert table BookingArea into database
         if(yellowTicket!=0)
         bookDao.insertBookingArea(bookingBean.getBookingID(),1,yellowTicket);
         if(orangeTicket!=0)
@@ -226,6 +221,7 @@ public class BookingServlet extends HttpServlet {
         if(blueTicket!=0)
         bookDao.insertBookingArea(bookingBean.getBookingID(),4,blueTicket);
         
+        //Redirect the page
         if(insertBooking.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS INSERT BOOKING");  

@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bean;
 
-/**
- *
- * @author azimd
- */
+//A class named ContactBean
 public class ContactBean implements java.io.Serializable {
     private int contactId;
     private String contactName;
@@ -16,6 +8,7 @@ public class ContactBean implements java.io.Serializable {
     private String contactSubject;
     private String contactMessage;
 
+    //Normal constructor
     public ContactBean(String contactName, String contactEmail, String contactSubject, String contactMessage,int id) {
         this.contactName = contactName;
         this.contactEmail = contactEmail;
@@ -24,16 +17,14 @@ public class ContactBean implements java.io.Serializable {
         this.contactId=id;
     }
     
+    //Default constructor
     public ContactBean() {
         
     }
 
+    //Getter(accessor) method 
     public int getContactId() {
         return contactId;
-    }
-
-    public void setContactId(int contactId) {
-        this.contactId = contactId;
     }
 
     public String getContactName() {
@@ -52,6 +43,11 @@ public class ContactBean implements java.io.Serializable {
         return contactMessage;
     }
 
+    //Setter(mutator) method
+    public void setContactId(int contactId) {
+        this.contactId = contactId;
+    }
+    
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }

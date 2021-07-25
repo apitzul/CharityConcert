@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.controller;
 
 import com.bean.ContactBean;
-import com.bean.LoginBean;
 import com.dao.ContactDao;
-import com.dao.LoginDao;
 import com.dao.dataDB;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,10 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author azimd
- */
 public class ContactServlet extends HttpServlet {
 
     /**
@@ -75,6 +64,7 @@ public class ContactServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
+        //Get all field parameters
         System.out.println("FLAG INTO SERVLET");
         String contactName = request.getParameter("fullName");
         String contactEmail = request.getParameter("email");
@@ -83,19 +73,23 @@ public class ContactServlet extends HttpServlet {
  
         dataDB table=new dataDB();
  
+        //ContactBean declration
         ContactBean contactBean = new ContactBean(); 
  
+        //Set ContactBean data
         contactBean.setContactId(table.nextID("CONTACT", "CONTACT_ID"));
         contactBean.setContactName(contactName); 
         contactBean.setContactEmail(contactEmail); 
         contactBean.setContactSubject(contactSubject); 
         contactBean.setContactMessage(contactMessage); 
  
-        
+        //ContactDao declaration
         ContactDao contactDao = new ContactDao(); 
  
+        //Insert Contact data into database
         String userValidate = contactDao.insertMessageToDB(contactBean);
 
+        //Redirect to page
         if(userValidate.equals("SUCCESS")) 
          {
              System.out.println("FLAG SUCCESS");
@@ -106,8 +100,7 @@ public class ContactServlet extends HttpServlet {
          {
              System.out.println("FLAG FAIL");
              request.getRequestDispatcher("/contactUs.jsp").forward(request, response);
-         }
-        
+         }        
     }
 
     /**

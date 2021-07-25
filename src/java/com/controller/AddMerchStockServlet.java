@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.controller;
 
 import com.bean.MerchandiseBean;
@@ -14,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author apitz
- */
 public class AddMerchStockServlet extends HttpServlet {
 
     /**
@@ -74,20 +65,24 @@ public class AddMerchStockServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("FLAG INTO SERVLET");
         
+        //Get all fields parameter
         int stock = Integer.parseInt(request.getParameter("merchandiseStock"));
         int id = Integer.parseInt(request.getParameter("merchandiseId"));
         int currentStock = Integer.parseInt(request.getParameter("merchandiseCurrentStock"));
         
+        //Declration of MerchandiseDao and MerchandiseBean
         MerchandiseDao merchDao = new MerchandiseDao(); 
         MerchandiseBean merchBean =new MerchandiseBean();
         
+        //Set a value for MerchandiseBean
         merchBean.setMerchandiseID(id);
         merchBean.setMerchandiseStock(currentStock+stock);
         merchBean.setMerchandiseStatus("Available");
         
+        //Update merchandise
         String userValidate = merchDao.updateMerch(merchBean); 
         
- 
+        //Redirect to next page
         if(userValidate.equals("SUCCESS")) 
          {
 
@@ -97,7 +92,7 @@ public class AddMerchStockServlet extends HttpServlet {
          }
          else
          {
-             System.out.println("FLAG FAIL TO LOGIN");            
+             System.out.println("FLAG FAIL TO LOGIN");      
              request.getRequestDispatcher("/areaMerchTable.jsp").forward(request, response);
          }
     }

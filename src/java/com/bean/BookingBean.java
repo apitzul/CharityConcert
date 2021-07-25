@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bean;
 
-/**
- *
- * @author apitz
- */
+//A class named BookingBean
 public class BookingBean implements java.io.Serializable {
     
     private int bookingID;
@@ -20,9 +12,11 @@ public class BookingBean implements java.io.Serializable {
     private String bookingDate;
     private String code;
 
+    //Default constructor
     public BookingBean() {
     }
 
+    //Normal constructor
     public BookingBean(int bookingID, int donorID, int merchandiseID, double totalPrice, double addValue, double finalPrice, String bookingDate,String code) {
         this.bookingID = bookingID;
         this.donorID = donorID;
@@ -34,6 +28,7 @@ public class BookingBean implements java.io.Serializable {
         this.code=code;
     }
 
+    //Getter(accessor) method & Setter(mutator) method
     public String getCode() {
         return code;
     }

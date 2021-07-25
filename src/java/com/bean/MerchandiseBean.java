@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.bean;
 
-/**
- *
- * @author azimd
- */
+//A class named DonorBean
 public class MerchandiseBean implements java.io.Serializable{
     private int merchandiseID;
     private int merchandiseStock;
@@ -16,6 +8,7 @@ public class MerchandiseBean implements java.io.Serializable{
     private String merchandiseStatus;
     private double merchandisePrice;
 
+    //Normal constructor 
     public MerchandiseBean(int merchandiseID, int merchandiseStock, String merchandiseType, String merchandiseStatus, double merchandisePrice) {
         this.merchandiseID = merchandiseID;
         this.merchandiseStock = merchandiseStock;
@@ -24,10 +17,12 @@ public class MerchandiseBean implements java.io.Serializable{
         this.merchandisePrice = merchandisePrice;
     }
    
+    //Default constructor
     public MerchandiseBean() {
 
     }
 
+    //Getter(accessor) method 
     public int getMerchandiseID() {
         return merchandiseID;
     }
@@ -48,6 +43,7 @@ public class MerchandiseBean implements java.io.Serializable{
         return merchandisePrice;
     }
 
+    //Setter(mutator) method
     public void setMerchandiseID(int merchandiseID) {
         this.merchandiseID = merchandiseID;
     }
@@ -68,6 +64,7 @@ public class MerchandiseBean implements java.io.Serializable{
         this.merchandisePrice = merchandisePrice;
     } 
 
+    //toString() method
     @Override
     public String toString() {
         return "MerchandiseBean{" + "merchandiseID=" + merchandiseID + ", merchandiseStock=" + merchandiseStock + ", merchandiseType=" + merchandiseType + ", merchandiseStatus=" + merchandiseStatus + ", merchandisePrice=" + merchandisePrice + '}';
