@@ -27,6 +27,7 @@ public class DonorDao {
     ResultSet resultSet = null;
     PreparedStatement pstmt=null;
     
+    //Insert Donor data into database
     public String insertDonor(DonorBean donorBean){
        
         int donorID = donorBean.getDonorID();
@@ -60,6 +61,7 @@ public class DonorDao {
         return "oops";
     }
     
+    //Select donor from database 
     public DonorBean selectDonor(int id) {
         
         DonorBean donorBean = new DonorBean();
@@ -96,6 +98,7 @@ public class DonorDao {
                 donorBean.setDonorPhone(donorPhoneDB);
                 
             }
+            //return donor data
             return donorBean;
         } catch (SQLException e) {
             e.printStackTrace();

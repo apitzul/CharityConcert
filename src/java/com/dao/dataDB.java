@@ -17,6 +17,8 @@ import java.sql.Statement;
  * @author apitz
  */
 public class dataDB {
+    
+    //Get maximum id from any table
     public int getMaxID(String tableName,String id){
         
         int size=0;
@@ -38,12 +40,13 @@ public class dataDB {
         return size;
     }
     
+    //Return next Id from any table
     public int nextID(String tableName,String id){
     
         return (getMaxID(tableName,id)+1);
     }
     
-    
+    //Return next BookId from Booking Table
     public int nextBookID(){
         
         int bookId=0;
@@ -67,14 +70,15 @@ public class dataDB {
         return bookId;
     }
     
-    //generate code for each ticket
+    //Generate code for each ticket
     private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
     private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
     private static final String NUMBER = "0123456789";
 
     private static final String DATA_FOR_RANDOM_STRING = CHAR_LOWER + CHAR_UPPER + NUMBER;
-    private static SecureRandom random = new SecureRandom();
     
+    private static SecureRandom random = new SecureRandom();
+    //Return generated code for each ticket
     public String generateRandomString(int length) {
         if (length < 1) throw new IllegalArgumentException();
 

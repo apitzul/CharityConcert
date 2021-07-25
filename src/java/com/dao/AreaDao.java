@@ -26,6 +26,7 @@ public class AreaDao {
     Statement statement = null;
     ResultSet resultSet = null;
     
+    //Get list of Area from Database
     public ArrayList<AreaBean> getAreaFromDB(){
     
        
@@ -55,10 +56,11 @@ public class AreaDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+        //return List of Area
         return areaList;
     }
     
+    //Search for area data and update area
     public void updateAreaToDB(AreaBean areaBean) throws SQLException{
         
          ArrayList<AreaBean> areaList=new ArrayList<AreaBean>();
@@ -82,6 +84,7 @@ public class AreaDao {
             updateDB(areaBean);
     }
     
+    //Update area capacity and status into database
     private void updateDB(AreaBean areaBean) throws SQLException {
         
         int id= areaBean.getAreaID();
@@ -99,6 +102,7 @@ public class AreaDao {
         
     }
     
+    //Get total seat booked in database
     public int getTotalSeat() {
         
         int numSeat=0;
@@ -116,6 +120,7 @@ public class AreaDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        //return total
         return numSeat;
     }
 }

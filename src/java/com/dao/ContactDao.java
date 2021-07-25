@@ -25,6 +25,7 @@ public class ContactDao {
     ResultSet resultSet = null;
     PreparedStatement pstmt=null;
     
+    //Insert Contact data into database
     public String insertMessageToDB(ContactBean contact){
         int id=contact.getContactId();
         String fullname= contact.getContactName();

@@ -26,6 +26,7 @@ public class MerchandiseDao {
     ResultSet resultSet = null;
     PreparedStatement pstmt=null;
     
+    //Select list of Merchandise from database
     public ArrayList<MerchandiseBean> selectMerchandise() {
         
         ArrayList<MerchandiseBean> merchList = new ArrayList<MerchandiseBean>();
@@ -65,6 +66,7 @@ public class MerchandiseDao {
         return merchList;
     }
     
+    //Get total Merchandise booked
      public double getTotalMerch() {
         
         double totalMerchDB=0.0;
@@ -87,6 +89,7 @@ public class MerchandiseDao {
         return totalMerchDB;
     }
      
+     //UPdate Merchandise data into database
      public String updateMerch(MerchandiseBean merchBean){
         
         int id = merchBean.getMerchandiseID();
@@ -112,6 +115,7 @@ public class MerchandiseDao {
         return "oops";
     }
      
+     //Update merchandise stock into database
      public void updateMerchStock(int id){
         
         try{
@@ -128,6 +132,7 @@ public class MerchandiseDao {
         
     }
      
+     //UPdate merchandise status into database
     public void updateMerchStatus(int id){
         
         try{

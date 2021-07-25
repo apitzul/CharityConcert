@@ -27,6 +27,7 @@ public class BookingDao {
     ResultSet resultSet = null;
     PreparedStatement pstmt=null;
     
+    //Insert Booking data into database
     public String insertBooking(BookingBean bookingBean){
        
         int bookingID = bookingBean.getBookingID();
@@ -64,6 +65,7 @@ public class BookingDao {
         return "oops";
     }
  
+    //Insert BookingArea data into database
     public String insertBookingArea(int bookingId,int areaId,int num){
        
         try
@@ -88,6 +90,7 @@ public class BookingDao {
         return "oops";
     }
     
+    //Delete Booking data that want refund
     public String deleteRefundBook(int bookingId){
        
         try
@@ -109,6 +112,7 @@ public class BookingDao {
         return "oops";
     }
     
+    //Insert Refund data into database
     public String insertRefund(BookingBean bookingBean){
        
         int bookingID = bookingBean.getBookingID();
@@ -146,6 +150,7 @@ public class BookingDao {
         return "FAIL";
     }
     
+    //Select list of Booking data
     public ArrayList<BookingBean> selectBooking() {
         
         ArrayList<BookingBean> bookList = new ArrayList<BookingBean>();
@@ -197,6 +202,7 @@ public class BookingDao {
         return bookList;
     }
     
+    //Get current total donation price
     public double getTotalDonation() {
         
         double totalPriceDB=0.0;

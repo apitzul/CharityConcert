@@ -17,6 +17,8 @@ import com.util.DBconnection;
  * @author azimd
  */
 public class LoginDao {
+    
+    //Authenticate admin account from database
     public String authenticateUser(LoginBean loginBean) {
         
         String username = loginBean.getUsername();
