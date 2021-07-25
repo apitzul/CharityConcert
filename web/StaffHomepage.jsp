@@ -63,6 +63,7 @@
         </script>
     </head>
     <body>
+        <!--Navigation bar-->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
@@ -74,6 +75,7 @@
         </div>
         
         <div id="main">
+            <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
             <img class="background7" src="Image/background contact us.jpeg">
             <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
@@ -82,7 +84,8 @@
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
             </div>
-
+            
+            <!--Page Content-->
             <div>
                 <c:set var="areaId" value="${param.areaId}"/>
                 <c:set var="areaName" value="${param.areaName}"/>
@@ -141,6 +144,8 @@
             </div>
                 <br>       
         </div>
+                        
+        <!--Navigation bar details-->
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {

@@ -99,6 +99,7 @@
         </script>
     </head>
     <body>
+        <!--Navigation bar-->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.html">Home</a>
@@ -110,7 +111,7 @@
             <a class="w3-text-blue" href="bookingOrder.jsp"><b>Book</b></a>
         </div>
         <div id="main">
-            <div>
+            <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
             <img class="background7" src="Image/background contact us.jpeg">
             <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
@@ -119,17 +120,14 @@
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
             </div>
-            </div>
 
+            <!--Page Content-->
             <div>
                 <div class="containerleft">
-
                     <h1><b>Let's get in touch.<br>
                         Send me a message.</b></h1>
-
                 <form method = "post" action = "ContactServlet">
                     <p>  </p>
-
                         <input style="border-radius: 4px" class="input1" type = "text" name = "fullName" size="49" placeholder="Full Name" required>&nbsp;
                         <input style="border-radius: 4px" class="input1" type ="text" name ="email" size="31" placeholder="Email" required>&nbsp;
                         <input style="border-radius: 4px" class="input1" type ="text" name ="subject" size="49" placeholder="Subject" required>&nbsp;  
@@ -142,6 +140,7 @@
             </div>
         </div>
         
+        <!--Navigation bar details-->
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
             function openNav() {

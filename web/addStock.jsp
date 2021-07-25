@@ -95,14 +95,14 @@
             int stock = Integer.parseInt(request.getParameter("stock"));
         %>
         
-        
+        <!--Navigation bar-->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="areaMerchTable.jsp">Area & Merchandise<br>Table</a>
             <a class="w3-text-red" href="staffLogin.jsp"><b>Log Out</b></a>
         </div>
         <div id="main">
-            <div>
+            <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
             <img class="background7" src="Image/background contact us.jpeg">
             <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
@@ -111,8 +111,8 @@
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
             </div>
-            </div>
 
+            <!--Page Content-->
             <div>
                 <div class="containerleft">
                     <%if(id==1){%>
@@ -135,6 +135,7 @@
             </div>
         </div>
         
+        <!--Navigation bar details-->
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
             function openNav() {

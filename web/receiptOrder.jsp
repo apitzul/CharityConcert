@@ -81,6 +81,7 @@ and open the template in the editor.
        
     %>
     <body>
+        <!--Navigation bar-->
             <img class="background8" src="Image/background receipt.jpg">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -93,6 +94,7 @@ and open the template in the editor.
             </div>
         
             <div id="main">
+                <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
                 <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
@@ -100,6 +102,8 @@ and open the template in the editor.
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
                 </div>
+                
+            <!--Page Content-->    
             <div class="divPadding">
                 <h1>Ticket Booking Details</h1>
             </div>
@@ -189,7 +193,8 @@ and open the template in the editor.
                 <a class="input2" href="homepage.html" >Finish Payment</a>
             </div>    
         </div>
-
+                   
+        <!--Navigation bar details-->            
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {

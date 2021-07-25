@@ -1,13 +1,8 @@
-<%-- 
-    Document   : staffLogin
-    Created on : Jul 4, 2021, 9:36:32 PM
-    Author     : azimd
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.controller.LoginServlet" %>
 <!DOCTYPE html>
 <html>
+    <!--Page Content-->
     <head>
         <title>Staff Login Page</title>
         <link rel="stylesheet" href="style.css">
@@ -57,7 +52,7 @@
         window.onload = alertName;  
         </script>
         
-        
+        <!--Navigation bar-->
         <div id="mySidenav" class="sidenav"> 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.html">Home</a>
@@ -70,6 +65,7 @@
         
         <div id="main">
         <form name="form" action="LoginServlet" method="POST">
+            <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
             <div class="span">                  
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
@@ -77,25 +73,22 @@
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
             </div>
-        
             <div class="background1">
+                
+                <!--Page Content-->
                 <div class="divLeft">
-
                     <h1><b>Please Log In.</b></h1>
-
                     <p>  </p>    
-
                     <input class="input1" type ="text" name = "username" size="49" placeholder="Enter Username" required>&nbsp;
                     <input class="input1" type ="password" name ="password" size="31" placeholder="Enter Password" required>&nbsp;
-
                     <p></p>
-
                     <input class="input2" type="submit" value="Log in">
-                    
                 </div>            
             </div>
         </form>
         </div>
+        
+        <!--Navigation bar details-->
         <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {

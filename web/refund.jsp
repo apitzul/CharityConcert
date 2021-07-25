@@ -73,6 +73,7 @@
     </head>
     
     <body>
+        <!--Navigation bar-->
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.html">Home</a>
@@ -83,16 +84,19 @@
         </div>
         
         <div id="main">
-        <form name="form" action="RefundServlet" method="POST">
-        <div class="span">           
+            <form name="form" action="RefundServlet" method="POST">
+                
+            <!--Background image and Top bar eg: logo DoNation and logo Caliph Buskers-->
+            <div class="span">           
                 <img src="Icon/menu.png" class="menuicon" onclick="openNav()">
                 <div>             
                     <img src="Image/logo white.png" class="icon">
                     <img src="Image/caliph buskers logo.png" class="icon">
                 </div>    
-        </div>
-        
-        <div class="background1">
+            </div>
+            <div class="background1">
+                
+            <!--Page Content-->    
             <div class="containerleft">
                 <h1>Refunds</h1>
                 <input list="bookId" type="text" name="booking_Id" placeholder="Enter Your Booking ID." required>
@@ -118,7 +122,9 @@
         </div>
         </form> 
         </div>
-          <script>
+          
+        <!--Navigation bar details-->        
+        <script>
             /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
                 function openNav() {
                   document.getElementById("mySidenav").style.width = "250px";
